@@ -1,4 +1,4 @@
-# 📸 My Lens - Portfolio Fotografico Professional
+# 📸 My Lens - Il mio primo sito - Fotografia naturalistica 
 
 Questo è un sito web sviluppato in Angular incentrato sulla fotografia naturalistica. Le foto sono state interamente scattate da me. 
 
