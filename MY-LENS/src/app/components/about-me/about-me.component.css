@@ -1,0 +1,1577 @@
+:host {
+
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+:host {
+
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+/* header ------------------------------------------------------- */
+
+header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+
+}
+
+.Navbar {
+    width: 100%;
+    height: 24rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.container-title {
+
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+    justify-content: center;
+
+
+}
+
+.container-title h1 {
+    font-size: 3rem;
+    font-weight: 300;
+
+    color: white;
+}
+
+
+
+.container-links {
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+    justify-content: center;
+
+
+}
+
+.main-links {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+
+.container-links .main-links a {
+
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+
+
+/* main -------------------------------------------------------- */
+
+/* sezione ME --------------------------------------------------- */
+
+
+
+p {
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: 0;
+    color: white;
+
+}
+
+.section-me {
+
+    display: flex;
+    width: 100%;
+    height: 700px;
+    margin-bottom: 2%;
+    background-color: rgb(200, 230, 197);
+    justify-content: center;
+    opacity: 0;
+
+
+}
+
+.presentation-me {
+    display: flex;
+    flex-direction: row;
+
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    color: rgb(34, 109, 34);
+    align-items: center;
+
+
+
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.title-img {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90%;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+
+.presentation-me .text h2 {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+#ciao h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(34, 109, 34);
+    text-align: start;
+    margin-left: 40px;
+
+
+}
+
+#me-uno p {
+    font-size: 20px;
+    font-weight: initial;
+    margin: 0;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+#me-due p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+}
+
+
+/* 
+ SEZIONE FOTO  ------------------------------------------ */
+
+
+
+.section-foto {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    background-color: white;
+    opacity: 0;
+}
+
+
+.presentation-foto {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    align-items: center;
+
+
+}
+
+
+.presentation-foto .text {
+    display: flex;
+    width: 100%;
+}
+
+#foto-text-uno p {
+    font-size: 18px;
+    font-weight: initial;
+    margin: 0;
+    color: rgb(34, 109, 34);
+
+}
+
+#foto-text-due {
+    margin: 0;
+}
+
+#foto-text-due p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(34, 109, 34);
+
+}
+
+
+
+.text p {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+/* 
+ SEZIONE WEB  ------------------------------------------ */
+
+.section-web {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    margin-top: 2%;
+    background-color: rgb(200, 230, 197);
+    opacity: 0;
+}
+
+.presentation-web {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(34, 109, 34);
+
+
+}
+
+.presentation-web .title-img {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: flex-end;
+}
+
+
+
+.img-web {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+#web-text-uno p {
+    font-size: 18px;
+    font-weight: initial;
+
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+
+}
+
+#web-text-due p {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(34, 109, 34);
+    text-align: start;
+    margin-left: 30px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-left: 25px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.animation {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.8s;
+}
+
+.delay-3 {
+    animation-delay: 1s;
+}
+
+
+
+/* footer -------------------------------------------------------- */
+
+
+
+
+.footer {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Lo stato finale: visibile e nella posizione corretta */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* RESPONSIVE DESIGN ------------------------------------------- */
+
+
+@media screen and (max-width: 1600px) {
+    .Navbar {
+        height: 20rem;
+    }
+
+    .container-title h1 {
+        font-size: 2rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 1.2rem;
+        margin: 8px;
+    }
+
+    .section-me,
+    .section-foto,
+    .section-web {
+        height: 550px;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 100%;
+    }
+
+    .title-img {
+        width: auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #ciao h3 {
+        font-size: 1.2rem;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 16px;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 16px;
+    }
+
+    #web-text-due p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 100%;
+
+        flex-direction: row;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    .text {
+
+        max-height: 600px;
+        width: auto;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    .Navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .container-title,
+    .container-links {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 1rem;
+        margin: 5px;
+    }
+
+
+    .section-me,
+    .section-foto,
+    .section-web {
+        height: auto;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 85%;
+        max-width: 500px;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+    }
+
+    .presentation-foto {
+        flex-direction: column;
+    }
+
+    .title-img,
+    .img-web {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .title-img img,
+    .img-web img {
+        object-fit: contain;
+        height: auto;
+        max-height: 400px;
+    }
+
+    .text {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    h2 {
+        font-size: 1.6rem;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    #ciao h3 {
+        margin-left: 50px;
+        text-align: left;
+    }
+
+    .presentation-me .text h2,
+    .presentation-foto .text h2,
+    .presentation-web .text h2 {
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    #me-uno p,
+    #me-due p,
+    #foto-text-uno p,
+    #foto-text-due p,
+    #web-text-uno p,
+    #web-text-due p {
+
+        text-align: left;
+    }
+
+    .text p {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .footer img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .Navbar {
+        padding: 15px 0;
+    }
+
+    .container-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .container-links .main-links {
+        padding: 3px;
+    }
+
+    .container-links .main-links a {
+        font-size: 0.9rem;
+        margin: 3px;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Sezioni - PERFETTAMENTE CENTRATE */
+    .section-me,
+    .section-foto,
+    .section-web {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        gap: 25px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .title-img,
+    .img-web {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    /* Titoli e testi - ALLINEATI A SINISTRA CON PADDING */
+    h2 {
+        font-size: 1.4rem;
+        margin-left: 0;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    h3,
+    #ciao h3 {
+        font-size: 1.1rem;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .presentation-me .text h2 {
+        margin-left: 0;
+        padding-left: 10px;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 14px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 15px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    #web-text-due p {
+        font-size: 16px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .text p {
+        font-size: 14px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .footer {
+        height: 150px;
+    }
+
+    .footer img {
+        width: 35px;
+        height: 35px;
+        margin: 8px;
+    }
+}
+
+/* SMARTPHONE PICCOLI (fino a 375px) */
+@media screen and (max-width: 375px) {
+    .container-title h1 {
+        font-size: 1.3rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 0.8rem;
+        margin: 2px;
+    }
+
+    /* Container perfettamente centrati */
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 92%;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    /* Testi allineati a sinistra */
+    h2 {
+        font-size: 1.2rem;
+        padding-left: 8px;
+    }
+
+    h3,
+    #ciao h3 {
+        font-size: 1rem;
+        padding-left: 8px;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 13px;
+        padding-left: 8px;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 14px;
+        padding-left: 8px;
+    }
+
+    #web-text-due p {
+        font-size: 15px;
+        padding-left: 8px;
+    }
+
+    .text p {
+        padding-left: 8px;
+    }
+
+    .footer img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+}
+
+/* header ------------------------------------------------------- */
+
+header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+
+}
+
+.Navbar {
+    width: 100%;
+    height: 24rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.container-title {
+
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+    justify-content: center;
+
+
+}
+
+.container-title h1 {
+    font-size: 3rem;
+    font-weight: 300;
+
+    color: white;
+}
+
+
+
+.container-links {
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+    justify-content: center;
+
+
+}
+
+.main-links {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+
+.container-links .main-links a {
+
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+
+
+/* main -------------------------------------------------------- */
+
+/* sezione ME --------------------------------------------------- */
+
+
+
+p {
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: 0;
+    color: white;
+
+}
+
+.section-me {
+
+    display: flex;
+    width: 100%;
+    height: 700px;
+    margin-bottom: 2%;
+    background-color: rgb(200, 230, 197);
+    justify-content: center;
+    opacity: 0;
+
+
+}
+
+.presentation-me {
+    display: flex;
+    flex-direction: row;
+
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    color: rgb(34, 109, 34);
+    align-items: center;
+
+
+
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.title-img {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90%;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+
+.presentation-me .text h2 {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+#ciao h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(34, 109, 34);
+    text-align: start;
+    margin-left: 40px;
+
+
+}
+
+#me-uno p {
+    font-size: 20px;
+    font-weight: initial;
+    margin: 0;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+#me-due p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+}
+
+
+/* 
+ SEZIONE FOTO  ------------------------------------------ */
+
+
+
+.section-foto {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    background-color: white;
+    opacity: 0;
+}
+
+
+.presentation-foto {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    align-items: center;
+
+
+}
+
+
+.presentation-foto .text {
+    display: flex;
+    width: 100%;
+}
+
+#foto-text-uno p {
+    font-size: 18px;
+    font-weight: initial;
+    margin: 0;
+    color: rgb(34, 109, 34);
+
+}
+
+#foto-text-due {
+    margin: 0;
+}
+
+#foto-text-due p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(34, 109, 34);
+
+}
+
+
+
+.text p {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+/* 
+ SEZIONE WEB  ------------------------------------------ */
+
+.section-web {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    margin-top: 2%;
+    background-color: rgb(200, 230, 197);
+    opacity: 0;
+}
+
+.presentation-web {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(34, 109, 34);
+
+
+}
+
+.presentation-web .title-img {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: flex-end;
+}
+
+
+
+.img-web {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+#web-text-uno p {
+    font-size: 18px;
+    font-weight: initial;
+
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+
+}
+
+#web-text-due p {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(34, 109, 34);
+    text-align: start;
+    margin-left: 30px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-left: 30px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-left: 25px;
+    color: rgb(34, 109, 34);
+    text-align: start;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.animation {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.8s;
+}
+
+.delay-3 {
+    animation-delay: 1s;
+}
+
+
+
+/* footer -------------------------------------------------------- */
+
+
+
+
+.footer {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Lo stato finale: visibile e nella posizione corretta */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* RESPONSIVE DESIGN ------------------------------------------- */
+
+
+@media screen and (max-width: 1600px) {
+    .Navbar {
+        height: 20rem;
+    }
+
+    .container-title h1 {
+        font-size: 2rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 1.2rem;
+        margin: 8px;
+    }
+
+    .section-me,
+    .section-foto,
+    .section-web {
+        height: 550px;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 100%;
+    }
+
+    .title-img {
+        width: auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #ciao h3 {
+        font-size: 1.2rem;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 16px;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 16px;
+    }
+
+    #web-text-due p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 100%;
+
+        flex-direction: row;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    .text {
+
+        max-height: 600px;
+        width: auto;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    .Navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .container-title,
+    .container-links {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 1rem;
+        margin: 5px;
+    }
+
+
+    .section-me,
+    .section-foto,
+    .section-web {
+        height: auto;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 85%;
+        max-width: 500px;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+    }
+
+    .presentation-foto {
+        flex-direction: column;
+    }
+
+    .title-img,
+    .img-web {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .title-img img,
+    .img-web img {
+        object-fit: contain;
+        height: auto;
+        max-height: 400px;
+    }
+
+    .text {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    h2 {
+        font-size: 1.6rem;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    #ciao h3 {
+        margin-left: 50px;
+        text-align: left;
+    }
+
+    .presentation-me .text h2,
+    .presentation-foto .text h2,
+    .presentation-web .text h2 {
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    #me-uno p,
+    #me-due p,
+    #foto-text-uno p,
+    #foto-text-due p,
+    #web-text-uno p,
+    #web-text-due p {
+
+        text-align: left;
+    }
+
+    .text p {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .footer img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .Navbar {
+        padding: 15px 0;
+    }
+
+    .container-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .container-links .main-links {
+        padding: 3px;
+    }
+
+    .container-links .main-links a {
+        font-size: 0.9rem;
+        margin: 3px;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Sezioni - PERFETTAMENTE CENTRATE */
+    .section-me,
+    .section-foto,
+    .section-web {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        gap: 25px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .title-img,
+    .img-web {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    /* Titoli e testi - ALLINEATI A SINISTRA CON PADDING */
+    h2 {
+        font-size: 1.4rem;
+        margin-left: 0;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    h3,
+    #ciao h3 {
+        font-size: 1.1rem;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .presentation-me .text h2 {
+        margin-left: 0;
+        padding-left: 10px;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 14px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 15px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    #web-text-due p {
+        font-size: 16px;
+        margin-left: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .text p {
+        font-size: 14px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .footer {
+        height: 150px;
+    }
+
+    .footer img {
+        width: 35px;
+        height: 35px;
+        margin: 8px;
+    }
+}
+
+/* SMARTPHONE PICCOLI (fino a 375px) */
+@media screen and (max-width: 375px) {
+    .container-title h1 {
+        font-size: 1.3rem;
+    }
+
+    .container-links .main-links a {
+        font-size: 0.8rem;
+        margin: 2px;
+    }
+
+    /* Container perfettamente centrati */
+    .presentation-me,
+    .presentation-foto,
+    .presentation-web {
+        width: 92%;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    /* Testi allineati a sinistra */
+    h2 {
+        font-size: 1.2rem;
+        padding-left: 8px;
+    }
+
+    h3,
+    #ciao h3 {
+        font-size: 1rem;
+        padding-left: 8px;
+    }
+
+    #me-uno p,
+    #foto-text-uno p,
+    #web-text-uno p {
+        font-size: 13px;
+        padding-left: 8px;
+    }
+
+    #me-due p,
+    #foto-text-due p {
+        font-size: 14px;
+        padding-left: 8px;
+    }
+
+    #web-text-due p {
+        font-size: 15px;
+        padding-left: 8px;
+    }
+
+    .text p {
+        padding-left: 8px;
+    }
+
+    .footer img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="container-footer">
+  <div class="info-social">
+    <a href="https://www.instagram.com/photo.bymylens_?igsh=MTl1M2hyY2ZuMjYzYQ==" target="_blank" rel="noopener noreferrer">
+    @if(InstagramLogo$ | async; as logo){
+    <img
+      [src]="getOptimizedUrl(logo.publicId, 100)"
+      [alt]="logo.title"
+      [width]="logo.width"
+      [height]="logo.height"
+      
+    />
+    } 
+    </a>
+  </div>
+</div>

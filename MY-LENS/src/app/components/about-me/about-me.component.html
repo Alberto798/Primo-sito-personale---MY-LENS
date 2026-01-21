@@ -1,0 +1,144 @@
+<section [style.background-image]="'url(' + backgroundAboutrMe + ')'">
+  <header>
+    <section class="Navbar">
+      <div class="container-title">
+        <h1>MY LENS</h1>
+      </div>
+
+      <div class="container-links">
+        <div class="main-links">
+          <a (click)="goToHome()">Home</a>
+          <a (click)="goToGallery()">Gallery</a>
+          <a (click)="goToAboutMe()">About Me</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section-me animation delay-1">
+      <div class="presentation-me">
+        <div class="title-img">
+          @if(fotoprofilo$ | async; as logo){
+          <img
+            [src]="getOptimizedUrl(logo.publicId, 1000)"
+            [alt]="logo.title"
+            [width]="logo.width"
+            [height]="logo.height"
+          />
+          }
+        </div>
+
+        <div class="text">
+          <h2>About me</h2>
+
+          <div id="ciao">
+            <h3>CIAO!</h3>
+          </div>
+
+          <div id="me-uno">
+            <p>
+              Mi chiamo Alberto e sono un appassionato di fotografia. In realtà
+              ho altre mille passioni, ma come spesso accade non si ha il tempo
+              di coltivarle tutte purtroppo. <br />
+              Quindi penso che bisognerebbe scegliere con cura a cosa dedicare
+              il proprio tempo.
+            </p>
+          </div>
+
+          <div id="me-due">
+            <p>
+              Per me la fotografia è una di quelle passioni che non posso
+              proprio trascurare. <br />
+              Come potete vedere dalla mia galleria, mi focalizzo principalmente
+              sulla natura e sui paesaggi. <br />
+              Amo perdermi nei boschi e catturare con il mio obiettivo la
+              bellezza che la natura ci offre ogni giorno. <br />
+              Spero che le mie foto riescano a trasmettervi almeno una parte
+              della meraviglia che provo io quando le scatto. <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-foto animation delay-2">
+      <div class="presentation-foto">
+        <div class="text">
+          <h2>Amo fotografare? Certo che si!!</h2>
+
+          <div id="foto-text-uno">
+            <p>
+              La prima volta che ho preso in mano una macchina fotografica (una
+              VERA macchina fotografica degna di questo nome) <br />
+              fu molto strano, perchè fino a quel momento avevo sempre usato la
+              fotocamera di mio padre, una compatta digitale, <br />
+              e nel 2013 non erano proprio il massimo della qualità.
+            </p>
+          </div>
+          <br />
+          <div id="foto-text-due">
+            <p>
+              Poi arrivato alle superiori, un istituto tecnico dove si studiava
+              fotografia, grafica e cinema, per motivi ovvi mi trovai ad avere
+              per le mani una reflex. Da quel momento in poi non la lasciai più,
+              e ben presto mi fu regalata la fotocamera che mi permette ancora
+              oggi di scattare le fotografie che vedete nella mia galleria e che
+              spero di cuore vi piacciano.
+            </p>
+          </div>
+          <br />
+        </div>
+      </div>
+    </section>
+    <section class="section-web animation delay-3">
+      <div class="presentation-web">
+        <div class="img-web">
+          @if(ragazzoNerd$ | async; as logo){
+          <img
+            [src]="getOptimizedUrl(logo.publicId, 500)"
+            [alt]="logo.title"
+            [width]="logo.width"
+            [height]="logo.height"
+          />
+          }
+        </div>
+        <div class="text">
+          <h2>Sono anche un po' nerd..</h2>
+          <div id="web-text-uno">
+            <p>
+              Ebbene si ... oltre alla fotografia, un'altra mia grande passione
+              è il mondo del web, della programmazione e dei videogiochi. <br />
+              Questo che vedete è il mio PRIMO sito personale, che ho realizzato
+              interamente da solo utilizzando Angular come framework. <br />
+              Ho deciso di creare questo sito per condividere con voi la mia
+              passione per la fotografia. <br />
+              Avendo iniziato a programmare da poco tempo, sto ancora imparando
+              molte cose.
+            </p>
+          </div>
+          <br />
+          <div id="web-text-due">
+            <p>
+              Spero che vi piaccia navigare tra le mie pagine e che possa essere
+              un'esperienza rilassante e soprattutto GRADEVOLE!<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer">
+      @if(InstagramLogo$ | async; as logo){
+      <img
+        [src]="getOptimizedUrl(logo.publicId, 100)"
+        [alt]="logo.title"
+        [width]="logo.width"
+        [height]="logo.height"
+      />
+      }
+    </div>
+  </footer>
+</section>

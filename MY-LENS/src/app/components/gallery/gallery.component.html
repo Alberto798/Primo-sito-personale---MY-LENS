@@ -1,0 +1,26 @@
+<section class="header">
+  <app-header></app-header>
+</section>
+<h2>MY GALLERY</h2>
+
+<div id="container-gallery">
+
+  <div class="gallery">
+  
+    @for(photo of AllPhotos$ | async; track photo.publicId) {
+    <img
+      [src]="getOptimizedUrl(photo.publicId, 700)"
+      [alt]="photo.title"
+      [width]="photo.width"
+      [height]="photo.height"
+      loading="lazy"
+      
+    />
+
+    }
+  </div>
+</div>
+  <section class="footer">
+    <app-footer></app-footer>
+  </section>
+

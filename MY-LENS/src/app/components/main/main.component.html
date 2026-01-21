@@ -1,0 +1,166 @@
+<div id="title-flora">
+  <h2
+    (mouseenter)="inHoverFlora()"
+    (mouseleave)="outHoverFlora()"
+    (click)="goToFlora()"
+  >
+    Flora
+  </h2>
+</div>
+
+<div class="linea" [ngClass]="{ lineaLunga: hoveredLineaFlora }"></div>
+
+<div class="container-flora effect delay-1">
+  @for(photo of floraPhotos$ | async; track photo.publicId){
+  <div class="img-flora">
+    <img
+      [src]="getOptimizedUrl(photo.publicId, 700)"
+      [alt]="photo.title"
+      [width]="photo.width"
+      [height]="photo.height"
+      [ngClass]="{ 'hovered-flora': hoverFlora }"
+      loading="lazy"
+    />
+  </div>
+  } @empty {
+
+  <p>Nessuna foto di flora disponibile.</p>
+
+  }
+</div>
+
+<!-- Sezione Fauna -->
+<div id="title-fauna">
+  <h2
+    (mouseenter)="inHoverFauna()"
+    (mouseleave)="outHoverFauna()"
+    (click)="goToFauna()"
+  >
+    Fauna
+  </h2>
+</div>
+<div class="linea" [ngClass]="{ lineaLunga: hoveredLineaFauna }"></div>
+<div class="container-fauna  effect delay-2">
+  <!-- Iteriamo su faunaPhotos -->
+  @for(photo of faunaPhotos$ | async ; track photo.publicId) {
+  <div class="img-fauna">
+    <img
+      [src]="getOptimizedUrl(photo.publicId, 700)"
+      [alt]="photo.title"
+      [width]="photo.width"
+      [height]="photo.height"
+      [ngClass]="{ 'hovered-fauna': hoverFauna }"
+      loading="lazy"
+    />
+  </div>
+  } @empty {
+  <p>Nessuna foto di fauna disponibile.</p>
+  }
+</div>
+
+<!-- Sezione Sky (Cielo) -->
+
+<div id="title-sky">
+  <h2
+    (mouseenter)="inHoverSky()"
+    (mouseleave)="outHoverSky()"
+    (click)="goToSky()"
+  >
+    Ciò che offre il cielo
+  </h2>
+</div>
+<div class="linea" [ngClass]="{ lineaLunga: hoveredLineaSky }"></div>
+
+<div class="container-sky effect delay-3">
+  <!-- Iteriamo su skyPhotos -->
+  @for(photo of skyPhotos$ | async; track photo.publicId) {
+  <div class="img-sky">
+    <img
+      [src]="getOptimizedUrl(photo.publicId, 700)"
+      [alt]="photo.title"
+      [width]="photo.width"
+      [height]="photo.height"
+      [ngClass]="{ 'hovered-sky': hoverSky }"
+      loading="lazy"
+    />
+  </div>
+  } @empty {
+  <p>Nessuna foto del cielo disponibile.</p>
+  }
+</div>
+
+<div id="title-funga">
+  <h2
+    (mouseenter)="inHoverFunga()"
+    (mouseleave)="outHoverFunga()"
+    (click)="goToFunga()"
+  >
+    Funga
+  </h2>
+</div>
+<div class="linea" [ngClass]="{ lineaLunga: hoveredLineaFunga }"></div>
+
+<div class="container-funga  effect delay-4">
+  @for(photo of fungaPhotos$ | async; track photo.publicId) {
+  <div class="img-funga">
+    <img
+      [src]="getOptimizedUrl(photo.publicId, 700)"
+      [alt]="photo.title"
+      [width]="photo.width"
+      [height]="photo.height"
+      [ngClass]="{ 'hovered-funga': hoverFunga }"
+      loading="lazy"
+    />
+  </div>
+  } @empty {
+  <p>Nessuna foto della funga disponibile.</p>
+  }
+</div>
+
+<div id="form-section" >
+  <section class="form">
+    <form
+      
+      class="my-form"
+      #myForm="ngForm"
+      (ngSubmit)="onSubmit(myForm)"
+    >
+      <h3>Parliamo, ti va?</h3>
+      <p>
+        Se hai piacere nel condividere un tuo pensiero sulle mie fotografie, se
+        hai dei consigli costruttivi su come possa migliorare il mio lavoro,
+        oppure semplicemente apprezzi quello che faccio... beh allora contattami
+        pure!
+      </p>
+      <div class="name">
+        <label for="name">Nome</label>
+        <input type="text" name="nome" ngModel placeholder="Inserisci il tuo nome" required />
+      </div>
+      <div class="surname">
+        <label for="surname">Cognome</label>
+        <input type="text" name="cognome" ngModel placeholder="Inserisci il tuo cognome" required />
+      </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" name="_replyto" ngModel placeholder="Inserisci la tua email" required />
+      </div>
+
+      <div class="message">
+        <label for="message">Scrivi ciò che pensi</label>
+        <textarea
+          name="messaggio"
+          placeholder="scrivi ciò che pensi..."
+          required
+          ngModel
+        ></textarea>
+      </div>
+
+      <button type="submit">Invia</button>
+    </form>
+
+    
+  </section>
+  <div class="form-image" [style.background-image]="'url(' + backgroundForm + ')'">
+
+    </div>
+</div>

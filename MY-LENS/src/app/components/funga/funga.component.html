@@ -1,0 +1,261 @@
+<app-header></app-header>
+
+<div class="sezione-funga">
+  @for(photo of fungaPhotos$ | async ; track photo.publicId) {
+  <div class="container">
+    <div class="container-img">
+      <img
+        [src]="getOptimizedUrl(photo.publicId, 800)"
+        [alt]="photo.title"
+        [width]="photo.width"
+        [height]="photo.height"
+      />
+    </div>
+    <div class="container-details">
+      <h2>{{ photo.title }}</h2>
+      <h3>Categoria: {{ photo.category }}</h3>
+      <hr />
+      <h3>Curiosità:</h3>
+      @if (photo.publicId == 'pustola-fungina'){
+
+      <article class="descrizione">
+        <p>
+          La <strong>Pustola Fungina</strong> (genere <em>Peziza spp.</em>) è un
+          tipo di fungo ascomicete noto per la sua
+          <strong>caratteristica forma a coppa o a disco</strong>. Questi funghi
+          non commestibili sono spesso trascurati, ma rappresentano un soggetto
+          di grande interesse per la
+          <strong>macrofotografia micologica</strong>. Li si trova comunemente
+          su
+          <strong>legno marcescente, terreno umido o detriti organici</strong>,
+          giocando un ruolo cruciale come decompositori.
+        </p>
+
+        <p>
+          La struttura a coppa, che può variare da pochi millimetri a diversi
+          centimetri, è perfetta per catturare la luce e le
+          <strong>texture interne granulari</strong>. Una curiosità è che
+          l'intera superficie interna della coppa (l'imenio) è l'area che
+          <strong>rilascia le spore</strong>. In alcune specie, se disturbate o
+          se l'umidità è elevata, le spore vengono "espulse attivamente" in
+          una nube visibile.
+        </p>
+
+        <p>
+          Il loro ruolo ecologico è vitale: sono
+          <strong>funghi saprofiti</strong>, il che significa che contribuiscono
+          attivamente alla
+          <strong>decomposizione della materia organica</strong> nel suolo e nel
+          sottobosco, rendendo i nutrienti disponibili per le piante. La loro
+          presenza è spesso un
+          <strong>indicatore di salute e umidità dell'ecosistema</strong>
+          forestale, rendendoli un elemento chiave nella fotografia di dettaglio
+          del bosco.
+        </p>
+      </article>
+      } @else if(photo.publicId =='Leotia-lubrica'){
+      <article class="descrizione">
+        <p>
+          La <strong>Leotia lubrica</strong>, nota anche come
+          <strong>Spugnola gelatinosa</strong>, è un fungo ascomicete facilmente
+          riconoscibile per il suo
+          <strong>aspetto insolito, quasi gommoso</strong>. Questo piccolo fungo
+          presenta un cappello irregolare e lobato, spesso di colore giallo-ocra
+          o olivastro, che poggia su un gambo sottile. Il suo aspetto
+          <strong>lucido e traslucido</strong> lo rende un soggetto affascinante
+          per la <strong>fotografia macro a basso contrasto</strong>, catturando
+          la luce attraverso la sua superficie gelatinosa.
+        </p>
+
+        <p>
+          Si trova comunemente in <strong>ambienti umidi e muschiosi</strong>,
+          crescendo su terreno nudo o su legno in decomposizione durante il
+          periodo autunnale. Una curiosità distintiva è la sua
+          <strong>consistenza gelatinosa</strong>, che gli permette di resistere
+          alla disidratazione in ambienti freschi. Nonostante l'aspetto curioso,
+          è generalmente considerata una
+          <strong>specie non commestibile</strong>.
+        </p>
+
+        <p>
+          Ecologicamente, la Leotia lubrica è un
+          <strong>fungo saprofita</strong> che contribuisce al
+          <strong>riciclo dei nutrienti</strong> nel sottobosco. La sua forma e
+          la sua trasparenza lo rendono un elemento quasi
+          <strong>surreale e fiabesco</strong> nel paesaggio boschivo, un
+          dettaglio essenziale per gli scatti che mirano a cogliere l'atmosfera
+          umida e autunnale.
+        </p>
+      </article>
+      } @else if(photo.publicId =='Stereum-hirsutum'){
+      <article class="descrizione">
+        <p>
+          Lo <strong>Stereum hirsutum</strong> è un
+          <strong>fungo saprofita lignicolo</strong>, estremamente comune e
+          diffuso in tutto il mondo, che cresce principalmente su
+          <strong>legno morto di latifoglie</strong>, come querce e faggi.
+          Appartiene al gruppo dei funghi a crosta o a mensola (shelf fungi) ed
+          è facilmente riconoscibile per la sua
+          <strong>forma a ventaglio o a rosetta</strong>, che spesso si
+          sovrappone a strati sul tronco.
+        </p>
+
+        <p>
+          La superficie superiore è <strong>irsuta (pelosa) e zonata</strong>,
+          con bande di colore che vanno dal grigio-giallastro al marrone chiaro,
+          mentre la parte inferiore è liscia e di colore ocra chiaro. Questa
+          combinazione di texture e colori lo rende un eccellente
+          <strong>soggetto per la fotografia di dettagli del sottobosco</strong
+          >, evidenziando la decomposizione naturale. Una curiosità è che se la
+          superficie inferiore viene graffiata, non cambia colore, a differenza
+          di molti altri funghi.
+        </p>
+
+        <p>
+          Il suo <strong>ruolo ecologico è cruciale</strong>: è un efficace
+          <strong>decompositore del legno</strong>, contribuendo al
+          <strong>riciclo della lignina e della cellulosa</strong> e alla
+          formazione dell'humus. Pur non essendo commestibile, la sua presenza è
+          un <strong>segno distintivo della salute della foresta</strong>. Viene
+          spesso confuso con Trametes versicolor, ma lo Stereum hirsutum
+          manca dei pori visibili sulla parte inferiore.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'Daedaleopsis-confragosa'){
+      <article class="descrizione">
+        <p>
+          La <strong>Daedaleopsis confragosa</strong>, nota anche come **Tramete
+          confragosa** o <strong>fungo a mensola delle betulle</strong>, è un
+          fungo poliporo lignicolo ampiamente diffuso in Europa e Nord America.
+          Questo fungo è un <strong>agente di marciume bianco</strong>,
+          crescendo su <strong>legno morto o morente di latifoglie</strong>, in
+          particolare salici, betulle e ontani.
+        </p>
+
+        <p>
+          Il suo carpoforo si presenta a
+          <strong>mensola o a ventaglio</strong> con una superficie superiore
+          liscia o leggermente zonata, di colore variabile. La caratteristica
+          distintiva è l'<strong>imenoforo</strong>, la parte inferiore: i pori,
+          inizialmente rotondi, con la maturazione si trasformano in una
+          <strong>struttura labirintica o lamellare sinuosa</strong>. 
+          Il nome "confragosa" si riferisce proprio alla sua superficie rugosa o rotta.
+        </p>
+
+        <p>
+          Lo *D. confragosa* non è commestibile, ma è
+          <strong>cruciale per l'ecosistema forestale</strong> in quanto
+          <strong>potente decompositore</strong>, facilitando il riciclo dei
+          nutrienti. Un'altra curiosità è che quando la superficie viene
+          graffiata o contusa, spesso manifesta una reazione cromatica
+          rossastra o brunastra, un dettaglio utile per l'identificazione sul
+          campo.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'Ganoderma-Lucidum'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Ganoderma Lucidum</strong>, conosciuto in Asia come
+          <strong>Reishi</strong>, è un
+          <strong>fungo poliporo lignicolo</strong> di grande fama, venerato per
+          millenni nella medicina tradizionale orientale come il "fungo
+          dell'immortalità". Cresce su
+          <strong>tronchi d'albero in decomposizione</strong>, prediligendo le
+          latifoglie, e si distingue per il suo
+          <strong>aspetto lucido e laccato</strong>, di colore rosso-marrone
+          intenso.
+        </p>
+
+        <p>
+          La sua struttura a <strong>mensola reniforme</strong> (a forma di
+          rene) e la sua superficie riflettente lo rendono un
+          <strong>soggetto di alto valore fotografico</strong>, specialmente
+          quando è immerso nel verde del sottobosco. 
+          A differenza di molti altri funghi il Reishi è estremamente duro e legnoso,
+          non commestibile da fresco. La sua durezza contribuisce alla sua
+          straordinaria resistenza nel tempo.
+        </p>
+
+        <p>
+          Dal punto di vista scientifico, è oggetto di numerosi studi per i suoi
+          <strong>potenziali benefici per la salute</strong>, attribuiti alla
+          ricchezza di <strong>polisaccaridi e triterpeni</strong>. Viene
+          prevalentemente utilizzato sotto forma di <strong>estratto o tisana</strong>.
+          Ecologicamente, agisce come un <strong>potente decompositore</strong>
+          ed è un indicatore di biodiversità nel suo habitat.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'Nectria-galligena'){
+      <article class="descrizione">
+        <p>
+          La <strong>Nectria galligena</strong> è un
+          <strong>fungo patogeno</strong> che causa la malattia nota come
+          <strong>Cancro delle pomacee</strong>, una delle
+          <strong>malattie più gravi</strong> che colpiscono alberi da frutto
+          come meli, peri e, occasionalmente, latifoglie selvatiche. È
+          classificato come un fungo ascomicete e rappresenta un serio problema
+          per la <strong>frutticoltura commerciale</strong>.
+        </p>
+
+        <p>
+          Il fungo attacca i rami e il tronco, causando
+          <strong>lesioni affossate e necrotiche</strong> che formano le
+          caratteristiche <strong>escrescenze cancerose (cancri)</strong> mentre
+          l'albero tenta di isolare l'infezione. Una curiosità è che il fungo
+          produce due tipi di spore: gli ascospori (nello stadio sessuale) e i
+          conidi (nello stadio asessuale), che ne facilitano la
+          <strong>diffusione attraverso ferite da potatura</strong>
+          o lesioni naturali.
+        </p>
+
+        <p>
+          Dal punto di vista ecologico e gestionale, è fondamentale il
+          <strong>controllo preventivo</strong>, in quanto il cancro può
+          <strong>indebolire gravemente l'albero</strong> e ridurne
+          drasticamente la produttività. I corpi fruttiferi rossi, chiamati
+          periteci, sono piccoli e sferici e possono essere immortalati in
+          scatti macro, ma sono il "segno della malattia attiva". La
+          <strong>gestione agronomica</strong> è cruciale per limitarne la
+          diffusione.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'funghi-chiodini'){
+      <article class="descrizione">
+        <p>
+          I <strong>Funghi Chiodini</strong> (Armillaria mellea) sono tra i
+          <strong>funghi autunnali più diffusi</strong> e ricercati per il
+          consumo, noti per la loro crescita in
+          <strong>fitti gruppi cespitosi</strong> alla base di alberi e ceppaie.
+          Appartengono al gruppo dei funghi a lamelle e sono riconoscibili per
+          il loro cappello color miele (da cui il nome *mellea*) e la presenza
+          di un <strong>anello membranoso sul gambo</strong>.
+        </p>
+
+        <p>
+          Il loro aspetto di "mazzetti" li rende un
+          <strong>soggetto fotografico eccellente</strong> per catturare la
+          dinamica di gruppo nel sottobosco. Una curiosità impressionante è il
+          loro <strong>ruolo di parassiti</strong>: sebbene siano anche
+          saprofiti, la Armillaria è in grado di attaccare gli alberi vivi,
+          causando il <strong>marciume radicale bianco</strong>. Inoltre,
+          producono <strong>rizomorfe</strong>, strutture filamentose nere che
+          agiscono come "radici" per diffondersi nel terreno.
+        </p>
+
+        <p>
+          Un fatto notevole è che i Chiodini devono essere
+          <strong>obbligatoriamente consumati cotti</strong> per eliminare una
+          tossina termolabile che, se ingerita cruda, provoca disturbi
+          gastrointestinali. Un'altra curiosità da record: una colonia di
+          *Armillaria* in Oregon è considerata uno degli
+          <strong>organismi più grandi e antichi del mondo</strong>,
+          estendendosi per oltre 9 chilometri quadrati.
+        </p>
+      </article>
+      } 
+      
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

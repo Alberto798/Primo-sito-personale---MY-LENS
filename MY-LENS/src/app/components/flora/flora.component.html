@@ -1,0 +1,308 @@
+<app-header></app-header>
+
+<div class="sezione-flora">
+  @for(photo of floraPhotos$ | async ; track photo.publicId) {
+  <div class="container">
+    <div class="container-img">
+      <img
+        [src]="getOptimizedUrl(photo.publicId, 800)"
+        [alt]="photo.title"
+        [width]="photo.width"
+        [height]="photo.height"
+      />
+    </div>
+    <div class="container-details">
+      <h2>{{ photo.title }}</h2>
+      <h3>Categoria: {{ photo.category }}</h3>
+      <hr />
+      <h3>Curiosità:</h3>
+      @if (photo.publicId == 'margherita'){
+
+      <article class="descrizione">
+        <p>
+          La <strong>Margherita Comune (Bellis perennis)</strong> è una delle
+          piante più riconoscibili e fotografate, elevandosi a
+          <strong>simbolo di resilienza e semplicità</strong> in molteplici
+          paesaggi primaverili. Classificata botanicamente come una pianta
+          erbacea perenne della famiglia delle <strong>Asteraceae</strong> (o
+          Composite), questa specie è presente in quasi tutti i prati e pascoli
+          europei.
+        </p>
+
+        <p>
+          Il fiore, tecnicamente chiamato <strong>capolino</strong>, è un
+          soggetto eccezionale per la fotografia macro: è composto da un disco
+          centrale giallo di fiori tubulosi e dai petali bianchi esterni
+          (ligule). Questa struttura complessa offre ai fotografi l'opportunità
+          di catturare dettagli fini e texture naturali. Dal punto di vista
+          ecologico, la Bellis perennis gioca un ruolo fondamentale come
+          <strong>pioniera e risorsa nettarifera precoce.</strong> Essendo una
+          delle prime fioriture stagionali, è cruciale per la sopravvivenza
+          degli insetti impollinatori, inclusi <strong>api e farfalle</strong> ,
+          che cercano nutrimento dopo l'inverno.
+        </p>
+      </article>
+      } @else if(photo.publicId =='Verbena Bonariensis'){
+      <article class="descrizione">
+        <p>
+          <strong>La Verbena</strong> è un genere diversificato di piante
+          erbacee o subarbustive che vanta una diffusione globale, con la
+          maggior parte delle varietà ornamentali
+          <strong
+            >originarie delle Americhe (in particolare Sud America).</strong
+          >
+          È rinomata nel mondo del giardinaggio e della fotografia di giardini
+          per la sua prolungata fioritura estiva e autunnale. Le infiorescenze,
+          tipicamente a corimbo o spiga, offrono un eccellente soggetto per la
+          macrofotografia dinamica, con i loro piccoli fiori viola o rosa che
+          creano un delicato effetto di texture su sfondo sfocato.
+        </p>
+
+        <p>
+          Dal punto di vista ecologico, la Verbena è un
+          <strong>magnete per gli impollinatori</strong>, in particolare
+          farfalle e api, rendendola cruciale per chi cerca scatti di
+          biodiversità urbana e flora nettarifera. I suoi utilizzi sono
+          prevalentemente ornamentali, ma alcune specie sono storicamente
+          impiegate in
+          <strong
+            >erboristeria (come la Verbena officinalis) per tisane e proprietà
+            digestive.</strong
+          >
+        </p>
+      </article>
+      } @else if(photo.publicId =='stella-alpina'){
+      <article class="descrizione">
+        <p>
+          <strong>La Stella Alpina (Leontopodium alpinum)</strong> è l'emblema
+          della flora d'alta quota europea, una pianta
+          <strong>perenne</strong> per eccellenza.
+          <strong>Originaria delle Alpi, Pirenei e Carpazi</strong>, cresce in
+          ambienti estremi come pascoli rocciosi tra i 1800 e i 3000 metri di
+          altitudine.
+        </p>
+        <p>
+          La sua rarità e il suo habitat impervio l'hanno resa simbolo di
+          <strong>coraggio e resilienza</strong> nella cultura alpina.Dal punto
+          di vista botanico, appartiene alla famiglia delle
+          <strong>Asteraceae</strong> e la sua peculiarità risiede nelle brattee
+          feltrose bianche che proteggono i piccoli fiori centrali. Questo
+          strato lanuginoso è un adattamento contro il freddo e le radiazioni
+          UV, rendendola un soggetto affascinante per la fotografia
+          naturalistica che si concentra sulle texture e sull'adattamento
+          evolutivo.
+        </p>
+        <p>
+          Oggi, la Stella Alpina è
+          <strong>rigorosamente protetta e la sua raccolta è vietata;</strong> è
+          coltivata a scopo ornamentale per giardini rocciosi o come fiore
+          reciso. Gli estratti ricavati dalla pianta sono apprezzati nella
+          cosmesi naturale per le loro proprietà antiossidanti e protettive.
+          Fotografare la Leontopodium alpinum significa promuovere la
+          conservazione della biodiversità montana e catturare un'icona botanica
+          senza tempo.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'ninfea'){
+      <article class="descrizione">
+        <p>
+          La <strong>Ninfea</strong> (<em>Nymphaea spp.</em>) è la
+          <strong>regina incontrastata dei fiori acquatici</strong>, una
+          <strong>pianta idrofitica perenne</strong>
+          diffusa in tutte le regioni temperate e tropicali del mondo. Il suo
+          habitat naturale è costituito da
+          <strong>stagni, laghi e corsi d'acqua calmi</strong>, dove affonda le
+          radici nel fondo fangoso. Le Ninfee ornamentali sono ricercate per i
+          loro
+          <strong>fiori grandi e appariscenti che galleggiano sull'acqua</strong
+          >, aprendo e chiudendosi in un
+          <strong>ciclo giornaliero affascinante</strong>.
+        </p>
+
+        <p>
+          I suoi <strong>fiori simmetrici</strong>, spesso bianchi, rosa o
+          gialli, e le sue <strong>ampie foglie galleggianti</strong> (dette
+          <em>pads</em>) creano una composizione naturale
+          <strong>perfetta per la fotografia di superficie</strong>. Questa
+          pianta è <strong>cruciale per la biodiversità acquatica</strong>: le
+          foglie offrono <strong>ombra e rifugio a pesci e anfibi</strong>,
+          mentre aiutano a
+          <strong>prevenire la crescita eccessiva di alghe</strong>,
+          contribuendo all'<strong>ossigenazione dell'acqua</strong>.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'crisantemi-rosa'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Crisantemo</strong> (<em>Chrysanthemum</em>), il cui nome
+          deriva dal greco "fiore d'oro", è una
+          <strong>pianta perenne</strong> originaria dell'<strong
+            >Asia orientale</strong
+          >, in particolare di Cina e Giappone. Appartenente alla famiglia delle
+          Asteraceae, vanta <strong>migliaia di cultivar</strong> che si
+          distinguono per un'incredibile
+          <strong>varietà di forme e colori</strong>, rendendola un soggetto
+          irrinunciabile per la
+          <strong>fotografia macro e i ritratti botanici autunnali</strong>. La
+          sua <strong>fioritura</strong>, che resiste fino ai primi geli, lo
+          rende essenziale per estendere la stagione fotografica.
+        </p>
+
+        <p>
+          In Giappone, il crisantemo è il <strong>fiore nazionale</strong>,
+          simbolo di <strong>nobiltà, longevità e perfezione</strong>, ed è
+          associato all'Imperatore (il "Trono del Crisantemo"). In Occidente, è
+          spesso legato alla commemorazione dei defunti, ma il suo
+          <strong>significato ornamentale è in grande crescita</strong>,
+          specialmente per le varietà a fiore piccolo e a pompon. Il suo
+          utilizzo principale è quello <strong>decorativo</strong>: è perfetto
+          per <strong>abbellire giardini tardo-stagionali</strong> e come
+          <strong>fiore reciso duraturo</strong>. Le sue radici contengono
+          composti con <strong>proprietà insetticide naturali</strong>, usati
+          storicamente per produrre il piretro.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'rosa'){
+      <article class="descrizione">
+        <p>
+          La <strong>Rosa</strong> (<em>Rosa spp.</em>) è una
+          <strong>pianta arbustiva perenne</strong> che non ha bisogno di
+          presentazioni, essendo il
+          <strong>fiore più coltivato e amato al mondo</strong>. Sebbene il
+          genere sia originario dell'Asia, le innumerevoli rose ibride oggi in
+          commercio sono il risultato di secoli di incroci, offrendo una
+          sbalorditiva <strong>varietà di colori, forme e profumi</strong> che
+          spaziano dal rosa pastello al rosso velluto.
+        </p>
+
+        <p>
+          La Rosa è un soggetto
+          <strong>insuperabile per la fotografia macro</strong> e per gli
+          <strong>scatti in primo piano</strong>, grazie alla
+          <strong>simmetria spiraliforme dei petali</strong> e alle ricche
+          texture che assorbono e riflettono la luce. Culturalmente, la Rosa è
+          <strong>simbolo universale di amore, bellezza e perfezione</strong>.
+          Il suo utilizzo è prevalentemente <strong>ornamentale</strong>, sia
+          come <strong>fiore reciso</strong> che per abbellire giardini, bordure
+          e pergolati. Gli
+          <strong>oli essenziali estratti dai petali</strong> (soprattutto dalla
+          <em>Rosa damascena</em>) sono fondamentali in profumeria e cosmesi,
+          noti per le loro <strong>proprietà lenitive e tonificanti</strong>.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'Geranio-minore'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Geranio</strong> (<em>Geranium spp.</em>), da non
+          confondere con il Pelargonio ornamentale, è un genere di
+          <strong>piante erbacee perenni</strong> originarie delle
+          <strong>regioni temperate di tutto il mondo</strong>. Molte specie
+          sono native dei prati europei e dei boschi luminosi, e si distinguono
+          per i loro caratteristici
+          <strong>fiori a cinque petali e le foglie palmate</strong>. La sua
+          diffusione spontanea lo rende un soggetto perfetto per la
+          <strong>fotografia di flora selvatica e biodiversità locale</strong>.
+        </p>
+
+        <p>
+          Il fiore, con le sue venature spesso marcate, è un
+          <strong>eccellente soggetto per la macrofotografia botanica</strong>,
+          permettendo di evidenziare la delicata simmetria e l'apparato
+          riproduttivo. Come la Verbena, il Geranio Selvatico è un'<strong
+            >importante pianta nettarifera</strong
+          >,
+          <strong
+            >cruciale per il sostegno di api e insetti impollinatori</strong
+          >
+          nei loro habitat naturali. Sebbene il suo utilizzo principale sia
+          quello <strong>ecologico e paesaggistico</strong> (è una fantastica
+          tappezzante), alcune specie sono impiegate in
+          <strong>erboristeria</strong> per le loro
+          <strong>proprietà astringenti</strong>.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'cymbaralia-muralis'){
+      <article class="descrizione">
+        <p>
+          La <strong>Cimbalaria</strong> o <strong>Erba dei Muri</strong> (<em
+            >Cymbalaria muralis</em
+          >) è una piccola
+          <strong>pianta perenne tappezzante</strong> appartenente alla famiglia
+          delle Plantaginaceae. Originaria dell'Europa meridionale e dell'area
+          mediterranea, è oggi <strong>diffusa globalmente</strong> grazie alla
+          sua incredibile <strong>capacità di adattamento</strong>.
+        </p>
+
+        <p>
+          Il suo nome comune deriva dal suo <strong>habitat preferito</strong>:
+          cresce spontaneamente su
+          <strong
+            >vecchi muri, rocce, rovine e fessure di pavimentazioni
+            urbane</strong
+          >. I suoi
+          <strong>minuscoli fiori bilabiati di colore viola-lilla</strong>, con
+          la caratteristica <strong>macchia gialla sulla gola</strong>, sono un
+          soggetto ideale per la <strong>macrofotografia urbana</strong> e per
+          gli scatti che combinano flora e architettura. L'effetto dei suoi
+          steli pendenti aggiunge un
+          <strong>contrasto di texture e colore inaspettato</strong>.
+        </p>
+
+        <p>
+          Dal punto di vista ecologico, la <em>Cymbalaria muralis</em> è una
+          <strong>specie pioniere</strong> che colonizza ambienti ostili,
+          contribuendo alla
+          <strong>disgregazione lenta e naturale della roccia</strong>. Il suo
+          utilizzo principale è <strong>paesaggistico</strong>, essendo una
+          <strong>tappezzante naturale per giardini rocciosi verticali</strong>
+          e un elemento chiave per la
+          <strong>fotografia di dettagli urbani</strong>
+          e per narrare la resilienza della natura in contesti antropizzati.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'evonimo-comune-1'){
+      <article class="descrizione">
+        <p>
+          L'<strong>Evonimo Comune</strong> o
+          <strong>Berretto da Prete</strong> (<em>Euonymus europaeus</em>) è un
+          <strong>arbusto deciduo</strong> originario dell'Europa e dell'Asia
+          occidentale, rinomato per la sua
+          <strong>spettacolare trasformazione nel tardo autunno</strong>.
+          Appartenente alla famiglia delle Celastraceae, è un soggetto di grande
+          interesse per la
+          <strong>fotografia naturalistica autunnale</strong> per i suoi colori
+          vivaci.
+        </p>
+
+        <p>
+          I suoi <strong>frutti</strong> sono la caratteristica più distintiva:
+          sono
+          <strong
+            >capsule a quattro lobi di un acceso color rosa o rosso vivo</strong
+          >, che si aprono per esporre i
+          <strong>semi arancioni brillanti</strong>. Questa combinazione
+          cromatica in contrasto con i rami spogli e il fogliame giallo/rosso
+          crea un
+          <strong>eccezionale punto focale per la macrofotografia</strong> e gli
+          <strong>scatti con sfondo bokeh</strong>. Fotografare l'Evonimo
+          significa catturare la <strong>tavolozza ricca e contrastata</strong>
+          che caratterizza la stagione di transizione.
+        </p>
+
+        <p>
+          Dal punto di vista ecologico, i frutti sono un'<strong
+            >importante fonte di cibo</strong
+          >
+          per diverse specie di uccelli selvatici che diffondono i semi.
+          Tuttavia, è cruciale notare che la pianta è
+          <strong>moderatamente tossica per l'uomo</strong>. Il suo utilizzo è
+          prevalentemente <strong>ornamentale</strong>, impiegato per
+          <strong>siepi e bordure nei giardini</strong> di interesse botanico.
+        </p>
+      </article>
+      }
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

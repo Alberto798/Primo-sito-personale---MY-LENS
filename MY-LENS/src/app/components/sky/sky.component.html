@@ -1,0 +1,131 @@
+<app-header></app-header>
+
+<div class="sezione-sky">
+  @for(photo of skyPhotos$ | async ; track photo.publicId) {
+  <div class="container">
+    <div class="container-img">
+      <img
+        [src]="getOptimizedUrl(photo.publicId, 800)"
+        [alt]="photo.title"
+        [width]="photo.width"
+        [height]="photo.height"
+      />
+    </div>
+    <div class="container-details">
+      <h2>{{ photo.title }}</h2>
+      <h3>Categoria: {{ photo.category }}</h3>
+      <hr />
+      <h3>Curiosità:</h3>
+      @if (photo.publicId == 'arcobaleno-0'){
+
+      <article class="descrizione">
+        <p>
+          L'<strong>Arcobaleno</strong> è forse il più celebre
+          <strong>fenomeno ottico-meteorologico</strong> visibile, un vero ponte
+          di luce che unisce cielo e terra. Si verifica quando la luce solare
+          incontra le goccioline d'acqua sospese nell'aria – sia pioggia che
+          nebbia – e subisce i processi di
+          <strong>rifrazione, riflessione e dispersione</strong>. L'arcobaleno
+          si forma sempre nella direzione **opposta rispetto al sole**, un
+          elemento fondamentale per la sua osservazione e fotografia, ed espone
+          lo <strong>spettro completo della luce visibile</strong>.
+        </p>
+
+        <p>
+          L'ordine dei colori è sempre fisso, seguendo il passaggio dal
+          <strong>rosso all'esterno al violetto all'interno</strong> dell'arco.
+          Una curiosità scientifica è che l'arcobaleno, da un punto di vista
+          geometrico, è in realtà un **cerchio completo**. L'osservatore a terra
+          ne vede solo la porzione ad arco, a causa dell'interferenza
+          dell'orizzonte; è possibile vedere il cerchio intero solo da grandi
+          altezze (come da un aereo). Quando appare un
+          <strong>doppio arcobaleno</strong>, quello secondario presenta sempre
+          l'ordine dei colori invertito.
+        </p>
+
+        <p>
+          Culturalmente, l'arcobaleno è un
+          <strong>simbolo universale di speranza e pace</strong> in moltissime
+          culture. Un fatto affascinante per la
+          <strong>fotografia meteorologica</strong> è che
+          <strong>ogni persona vede il proprio arcobaleno unico</strong>: le
+          specifiche goccioline d'acqua che riflettono la luce verso il tuo
+          occhio sono diverse da quelle riflesse nell'occhio di un altro
+          osservatore. Per la sua formazione, il sole deve essere relativamente
+          basso, sotto i 42 gradi sull'orizzonte.
+        </p>
+      </article>
+      } @else if(photo.publicId =='luna-0'){
+      <article class="descrizione">
+        <p>
+          La <strong>Luna</strong> è l'<strong
+            >unico satellite naturale della Terra</strong
+          >
+          e l'oggetto celeste più luminoso e familiare del nostro cielo
+          notturno. Formatasi circa 4.5 miliardi di anni fa, è il quinto
+          satellite più grande del Sistema Solare. La sua superficie è
+          costellata di <strong>crateri da impatto</strong> e di vaste e scure
+          pianure di basalto, chiamate *mari*, che sono un soggetto primario per
+          la <strong>fotografia astronomica</strong>.
+        </p>
+
+        <p>
+          La Luna è in <strong>blocco mareale</strong> con la Terra, il che
+          significa che ci mostra sempre la <strong>stessa faccia</strong>
+          durante la sua orbita. Una curiosità fondamentale è il suo ruolo nel
+          fenomeno delle
+          <strong>maree oceaniche</strong>, causato dalla sua forza
+          gravitazionale. Le sue diverse <strong>fasi lunari</strong> (Nuova,
+          Crescente, Piena) offrono ai fotografi un'infinita gamma di texture
+          superficiali e drammatici giochi di luce e ombra, rendendola un
+          soggetto sempre vario.
+        </p>
+
+        <p>
+          Una <strong>curiosità ambientale</strong> è l'assenza di un'atmosfera
+          significativa, il che significa che le tracce lasciate dagli
+          astronauti delle <strong>missioni Apollo</strong> rimarranno visibili
+          per milioni di anni poiché non c'è erosione da vento o acqua. La
+          gravità superficiale della Luna è solo **1/6 di quella terrestre**, un
+          altro elemento cruciale per future esplorazioni umane.
+        </p>
+      </article>
+      } @else if(photo.publicId =='tramonto-1'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Tramonto</strong> è la
+          <strong>più sublime delle transizioni quotidiane</strong>, un
+          <strong>fenomeno ottico e atmosferico</strong> che segna la pacifica
+          chiusura del giorno. Quando il Sole si immerge verso l'orizzonte, i
+          suoi raggi viaggiano attraverso uno strato atmosferico enormemente più
+          denso. Questo percorso esteso provoca la dispersione della luce blu
+          e viola, lasciando che siano le lunghezze d'onda più lunghe — i
+          <strong>rossi intensi, gli aranci infuocati e l'oro fuso</strong> — a
+          dominare la scena, dipingendo la volta celeste di fuoco liquido.
+        </p>
+
+        <p>
+          L'intensità della <strong>palette cromatica</strong> è spesso
+          amplificata dalla presenza di polveri sottili o aerosol nell'aria, che
+          rendono lo spettacolo ancora più drammatico e saturo. È il sacro
+          "Momento d'Oro (Golden Hour)" per la fotografia, quando ogni
+          elemento del paesaggio si riveste di una luce calda e vellutata. Una
+          curiosità che sfugge a molti è il Raggio Verde (Green Flash), un
+          lampo fugace di colore smeraldo visibile solo per un istante appena il
+          disco solare scompare sotto l'orizzonte.
+        </p>
+
+        <p>
+          Emotivamente e culturalmente, il tramonto è la "porta verso la
+          notte", un simbolo universale di rinnovamento e riflessione.
+          Poiché le condizioni atmosferiche variano
+          ogni sera, la meraviglia intrinseca di questo evento sta nel fatto che
+          <strong>ogni tramonto è uno spettacolo irripetibile</strong>.
+        </p>
+      </article>
+      }
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

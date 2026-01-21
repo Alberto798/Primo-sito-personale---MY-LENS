@@ -1,0 +1,253 @@
+<app-header></app-header>
+
+<div class="sezione-fauna">
+  @for(photo of faunaPhotos$ | async ; track photo.publicId) {
+  <div class="container">
+    <div class="container-img">
+      <img
+        [src]="getOptimizedUrl(photo.publicId, 800)"
+        [alt]="photo.title"
+        [width]="photo.width"
+        [height]="photo.height"
+      />
+    </div>
+    <div class="container-details">
+      <h2>{{ photo.title }}</h2>
+      <h3>Categoria: {{ photo.category }}</h3>
+      <hr />
+      <h3>Curiosità:</h3>
+      @if (photo.publicId == 'PICCIONE'){
+
+      <article class="descrizione">
+        <p>
+          Il <strong>Piccione Comune</strong> (<em>Columba livia domestica</em>)
+          è senza dubbio il
+          <strong>volatile urbano più diffuso al mondo</strong>, discendente
+          diretto del piccione selvatico delle rocce. Questa specie è l'emblema
+          della <strong>resilienza biologica</strong>, essendosi adattata
+          perfettamente agli ambienti cittadini in ogni angolo del pianeta.
+        </p>
+
+        <p>
+          I piccioni sono noti per la loro
+          <strong>straordinaria capacità di orientamento</strong>: riescono a
+          ritrovare la strada per centinaia di chilometri, sfruttando il campo
+          magnetico terrestre e l'olfatto. Questa abilità è il motivo storico
+          per cui sono stati usati come
+          <strong>piccioni viaggiatori</strong> per millenni. Sono un ottimo
+          soggetto per la <strong>fotografia urbana dinamica</strong>, grazie al
+          loro volo caratteristico.
+        </p>
+
+        <p>
+          Una curiosità poco nota è la loro
+          <strong>intelligenza sociale</strong>: sono capaci di
+          <strong>riconoscere volti umani specifici</strong> e di superare il
+          test dello specchio (riconoscimento di sé). Nonostante la reputazione,
+          svolgono un <strong>ruolo ecologico urbano</strong>
+          come opportunisti e spazzini. Il loro piumaggio offre una vasta gamma
+          di colori, dal grigio metallico al nero.
+        </p>
+      </article>
+      } @else if(photo.publicId =='farfalla-Melitaea'){
+      <article class="descrizione">
+        <p>
+          La <strong>Farfalla Melitea</strong> è un affascinante insetto diurno
+          appartenente alla famiglia delle Nymphalidae, conosciuta per il suo
+          tipico <strong>disegno a scacchiera arancione e nero</strong>. Queste
+          farfalle di medie dimensioni sono ampiamente distribuite in
+          <strong>prati aperti, pascoli secchi e radure soleggiate</strong>, un
+          habitat ideale per la <strong>fotografia di biodiversità</strong>.
+        </p>
+
+        <p>
+          Il disegno complesso e intricato delle loro ali le rende un
+          <strong>soggetto irrinunciabile per la macrofotografia</strong>
+          naturalistica, che mira a catturare l'armonia delle bande e delle
+          macchie. Una curiosità è la loro
+          <strong>capacità di termoregolazione</strong>: spesso si crogiolano al
+          sole con le ali aperte per assorbire calore, un comportamento perfetto
+          per uno scatto in *close-up*. Sono considerate un
+          <strong>ottimo indicatore della qualità ambientale</strong>.
+        </p>
+
+        <p>
+          L'aspetto più notevole è il loro ciclo vitale: i bruchi, spesso scuri
+          e spinosi, trascorrono l'inverno in un
+          <strong>nido sericeo comunitario</strong>, chiamato ibernaculum.
+          Questo comportamento di <strong>ibernazione sincronizzata</strong>
+          è vitale per la loro sopravvivenza al freddo.
+        </p>
+      </article>
+      } @else if(photo.publicId =='serpente'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Pitone</strong> (famiglia <em>Pythonidae</em>) è uno dei
+          gruppi di <strong>serpenti più grandi del mondo</strong>, e una figura
+          iconica nella <strong>fotografia di erpetologia</strong>. Questi
+          <strong>costrittori non velenosi</strong> sono nativi dell'Africa,
+          dell'Asia e dell'Australia, noti per la loro
+          <strong>straordinaria forza muscolare</strong>
+          e le impressionanti lunghezze che possono raggiungere in diverse
+          specie.
+        </p>
+
+        <p>
+          La loro tecnica di caccia è affascinante: la preda viene uccisa per
+          <strong>costrizione</strong>, un meccanismo che, contrariamente al
+          mito, induce l'arresto cardiaco piuttosto che schiacciare le ossa. Una
+          curiosità sensoriale è la presenza di
+          <strong>fossette labiali termo-sensibili</strong>, veri e propri
+          "sensori di calore" che permettono al pitone di
+          <strong>localizzare prede a sangue caldo al buio</strong> completo.
+        </p>
+
+        <p>
+          Sono soggetti ricercati per la fotografia per via dei loro
+          <strong>motivi squamati complessi</strong> (come nel Pitone Reale o il
+          Reticolato). Il Pitone Reticolato (<em>P. reticulatus</em>) è, per
+          curiosità, il <strong>serpente più lungo del mondo</strong>. Un altro
+          aspetto notevole è la loro <strong>longevità</strong>: in cattività
+          possono vivere regolarmente fino a 25-40 anni.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'tartaruga-marina'){
+      <article class="descrizione">
+        <p>
+          La <strong>Tartaruga Marina</strong> (Superfamiglia
+          <em>Chelonioidea</em>) è uno degli
+          <strong>animali marini più iconici</strong>, un rettile la cui stirpe
+          è sopravvissuta per oltre 110 milioni di anni. Queste creature vivono
+          in <strong>tutti i mari tropicali e subtropicali</strong> e sono
+          immediatamente riconoscibili per il robusto carapace e le possenti
+          <strong>zampe trasformate in pinne</strong>.
+        </p>
+
+        <p>
+          Sono famose per le loro <strong>migrazioni oceaniche epiche</strong>,
+          attraversando migliaia di chilometri tra i siti di alimentazione e
+          riproduzione. Una curiosità straordinaria è il loro
+          <strong>orientamento magnetico</strong>: le femmine ritornano sulla
+          <strong>stessa spiaggia dove sono nate</strong> per deporre le uova,
+          navigando grazie al campo magnetico terrestre. Sono soggetti perfetti
+          per la <strong>fotografia subacquea</strong>.
+        </p>
+
+        <p>
+          Tutte le sette specie esistenti sono purtroppo classificate come
+          <strong>specie in pericolo o minacciate</strong>. Una curiosità
+          fisica: le tartarughe marine "piangono" quando sono sulla terraferma,
+          ma in realtà stanno espellendo il sale in eccesso dal corpo attraverso
+          <strong>ghiandole specializzate vicino agli occhi</strong>. Sono
+          importanti <strong>indicatori della salute degli oceani</strong>.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'coccodrillo'){
+      <article class="descrizione">
+        <p>
+          Il <strong>Coccodrillo</strong> (famiglia <em>Crocodylidae</em>) è un
+          <strong>rettile predatore semi-acquatico</strong> e uno dei "fossili
+          viventi" del nostro pianeta. Appartenente a una stirpe che ha
+          resistito all'estinzione dei dinosauri, è un
+          <strong>predatore d'apice</strong>
+          presente nelle regioni tropicali di Africa, Asia, Americhe e
+          Australia.
+        </p>
+
+        <p>
+          Il coccodrillo è famoso per la sua
+          <strong>morsa, la più potente del regno animale</strong>. Una
+          curiosità che lo rende un soggetto fotografico dinamico è la "<strong
+            >rotazione mortale</strong
+          >" (*death roll*), usata per sopraffare e disarticolare prede grandi.
+          Paradossalmente, i muscoli usati per aprire la bocca sono
+          incredibilmente deboli. Le narici, occhi e orecchie sono posizionati
+          sulla stessa linea per la caccia furtiva.
+        </p>
+
+        <p>
+          Una <strong>curiosità fisiologica</strong> è che, a differenza della
+          maggior parte dei rettili, il coccodrillo possiede un
+          <strong>cuore a quattro camere</strong>, ottimizzando l'ossigenazione
+          durante le lunghe immersioni. Un altro fatto notevole è che
+          <strong>non possono sporgere la lingua</strong>, poiché è saldamente
+          fissata al fondo della bocca. Sono anche noti per la loro
+          <strong>longevità</strong>, superando spesso i 70 anni.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'lucertola'){
+      <article class="descrizione">
+        <p>
+          La <strong>Lucertola Comune</strong> (principalmente
+          <em>Podarcis muralis</em>) è il
+          <strong>rettile diurno più frequente</strong> nei nostri contesti, un
+          piccolo e agile squamato appartenente alla famiglia Lacertidae. È
+          diffusa in gran parte dell'Europa meridionale e centrale. Il suo
+          habitat è estremamente vario, prediligendo
+          <strong>muri a secco, rocce, giardini e rovine</strong>, dove può
+          termoregolarsi facilmente.
+        </p>
+
+        <p>
+          Queste lucertole sono maestre della <strong>termocronometria</strong>:
+          trascorrono le ore centrali della giornata al sole per immagazzinare
+          calore, un comportamento che le rende un soggetto ideale per la
+          <strong>fotografia naturalistica di dettaglio</strong>. Sono un
+          eccellente <strong>controllo biologico naturale</strong>, poiché la
+          loro dieta è composta principalmente da
+          <strong>insetti, ragni e piccole lumache</strong>.
+        </p>
+
+        <p>
+          La sua difesa più nota è l'<strong>autotomia</strong>: quando
+          minacciata, la lucertola può
+          <strong>staccare volontariamente la coda</strong>, che continua a
+          muoversi per distrarre il predatore mentre essa fugge. Una curiosità:
+          la coda ricrescerà, ma sarà composta da cartilagine, non da vertebre.
+          Il suo <strong>corpo snello e le dita artigliate</strong>
+          le permettono di arrampicarsi su superfici quasi verticali con
+          incredibile velocità.
+        </p>
+      </article>
+      } @else if(photo.publicId == 'anatra'){
+      <article class="descrizione">
+        <p>
+          L'<strong>Anatra</strong> (principalmente il genere <em>Anas</em>,
+          come l'Anatra Selvatica) è un
+          <strong>uccello acquatico onnipresente</strong> che popola zone umide,
+          fiumi, stagni e laghi in tutto il mondo. Appartenente alla famiglia
+          Anatidae, è un soggetto comune ma affascinante per la
+          <strong>fotografia di paesaggio acquatico</strong> e la ripresa di
+          avifauna. L'<strong>Anatra Selvatica maschio</strong> (Germano Reale)
+          si distingue per la sua iconica
+          <strong>testa verde iridescente</strong>.
+        </p>
+
+        <p>
+          Questi uccelli sono noti per essere
+          <strong>eccellenti nuotatori e tuffatori</strong>, sfruttando le loro
+          <strong>zampe palmate</strong> per muoversi con grazia nell'acqua. Una
+          curiosità che le rende fotogeniche è la loro abitudine al "<strong
+            >filtraggio dell'acqua</strong
+          >" (*dabbling*), immergendo solo la testa per nutrirsi di vegetazione
+          e piccoli invertebrati. Sono anche tra i pochi uccelli che
+          <strong>mutano le piume tutte in una volta</strong>, perdendo
+          temporaneamente la capacità di volare.
+        </p>
+
+        <p>
+          Un fatto affascinante è la loro
+          <strong>capacità di dormire con metà cervello attivo</strong> (sonno
+          uniemisferico a onde lente) mentre l'altra metà riposa, permettendo
+          loro di <strong>mantenere la vigilanza</strong> contro i predatori. La
+          loro dieta onnivora le rende cruciali per l'ecosistema degli stagni.
+          Il loro <strong>utilizzo domestico</strong> (Anatra Muta o Pechino) è
+          diffuso in tutto il mondo per carne e uova.
+        </p>
+      </article>
+      }
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

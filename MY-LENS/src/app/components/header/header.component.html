@@ -1,0 +1,31 @@
+<header [style.background-image]="'url('+ backGroundHeader +')'">
+  <section class="Navbar" >
+    <div id="logo-container">
+      @if(logoSito$ | async; as logo){
+      <img
+        id="logo"
+        [src]="getOptimizedUrl(logo.publicId, 200)"
+        [alt]="logo.title"
+        [width]="logo.width"
+        [height]="logo.height"
+      />
+      }
+    </div>
+
+    <div class="container-title">
+      <h1>MY LENS</h1>
+    </div>
+
+    <div class="container-links">
+      <div class="main-links">
+        <a (click)="goToHome()">Home</a>
+        <a (click)="goToGallery()">Gallery</a>
+        <a (click)="goToAboutMe()">About Me</a>
+      </div>
+    </div>
+  </section>
+  <p>
+    "Fotografare la natura nella sua immensa bellezza è uno dei tanti modi per
+    onorarla"
+  </p>
+</header>
