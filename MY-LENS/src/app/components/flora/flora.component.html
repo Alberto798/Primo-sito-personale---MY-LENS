@@ -1,6 +1,8 @@
 <app-header></app-header>
 
 <div class="sezione-flora">
+  <h1 class="flora-titolo">Flora</h1>
+
   @for(photo of floraPhotos$ | async ; track photo.publicId) {
   <div class="container">
     <div class="container-img">
@@ -16,61 +18,15 @@
       <h3>Categoria: {{ photo.category }}</h3>
       <hr />
       <h3>Curiosità:</h3>
-      @if (photo.publicId == 'margherita'){
+
+      
 
       <article class="descrizione">
-        <p>
-          La <strong>Margherita Comune (Bellis perennis)</strong> è una delle
-          piante più riconoscibili e fotografate, elevandosi a
-          <strong>simbolo di resilienza e semplicità</strong> in molteplici
-          paesaggi primaverili. Classificata botanicamente come una pianta
-          erbacea perenne della famiglia delle <strong>Asteraceae</strong> (o
-          Composite), questa specie è presente in quasi tutti i prati e pascoli
-          europei.
-        </p>
-
-        <p>
-          Il fiore, tecnicamente chiamato <strong>capolino</strong>, è un
-          soggetto eccezionale per la fotografia macro: è composto da un disco
-          centrale giallo di fiori tubulosi e dai petali bianchi esterni
-          (ligule). Questa struttura complessa offre ai fotografi l'opportunità
-          di catturare dettagli fini e texture naturali. Dal punto di vista
-          ecologico, la Bellis perennis gioca un ruolo fondamentale come
-          <strong>pioniera e risorsa nettarifera precoce.</strong> Essendo una
-          delle prime fioriture stagionali, è cruciale per la sopravvivenza
-          degli insetti impollinatori, inclusi <strong>api e farfalle</strong> ,
-          che cercano nutrimento dopo l'inverno.
-        </p>
+        <p [innerHTML]="photo.description"></p>  
       </article>
-      } @else if(photo.publicId =='Verbena Bonariensis'){
-      <article class="descrizione">
-        <p>
-          <strong>La Verbena</strong> è un genere diversificato di piante
-          erbacee o subarbustive che vanta una diffusione globale, con la
-          maggior parte delle varietà ornamentali
-          <strong
-            >originarie delle Americhe (in particolare Sud America).</strong
-          >
-          È rinomata nel mondo del giardinaggio e della fotografia di giardini
-          per la sua prolungata fioritura estiva e autunnale. Le infiorescenze,
-          tipicamente a corimbo o spiga, offrono un eccellente soggetto per la
-          macrofotografia dinamica, con i loro piccoli fiori viola o rosa che
-          creano un delicato effetto di texture su sfondo sfocato.
-        </p>
 
-        <p>
-          Dal punto di vista ecologico, la Verbena è un
-          <strong>magnete per gli impollinatori</strong>, in particolare
-          farfalle e api, rendendola cruciale per chi cerca scatti di
-          biodiversità urbana e flora nettarifera. I suoi utilizzi sono
-          prevalentemente ornamentali, ma alcune specie sono storicamente
-          impiegate in
-          <strong
-            >erboristeria (come la Verbena officinalis) per tisane e proprietà
-            digestive.</strong
-          >
-        </p>
-      </article>
+       @if(photo.publicId =='Verbena Bonariensis'){
+      
       } @else if(photo.publicId =='stella-alpina'){
       <article class="descrizione">
         <p>

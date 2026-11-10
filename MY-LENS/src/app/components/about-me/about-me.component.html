@@ -1,4 +1,7 @@
-<section [style.background-image]="'url(' + backgroundAboutrMe + ')'">
+
+
+
+<section class="pagina-about" [style.background-image]="'url(' + backgroundAboutrMe + ')'">
   <header>
     <section class="Navbar">
       <div class="container-title">
@@ -64,6 +67,16 @@
 
     <section class="section-foto animation delay-2">
       <div class="presentation-foto">
+         <div class="title-img">
+          @if(profiloFotografo$ | async; as logo){
+          <img
+            [src]="getOptimizedUrl(logo.publicId, 800)"
+            [alt]="logo.title"
+            [width]="logo.width"
+            [height]="logo.height"
+          />
+          }
+        </div>
         <div class="text">
           <h2>Amo fotografare? Certo che si!!</h2>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, effect, OnInit, signal } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { Router } from '@angular/router';
@@ -21,10 +21,9 @@ export class AboutMeComponent implements OnInit {
   carattereGrande = '';
 
   fotoprofilo$!: Observable<BackgroundAndIcons | undefined>;
+  profiloFotografo$!: Observable<BackgroundAndIcons | undefined>;
   ragazzoNerd$!: Observable<BackgroundAndIcons | undefined>;
   InstagramLogo$!: Observable<BackgroundAndIcons | undefined>;
-
-  
 
   backgroundAboutrMe: string =
     'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/v1763063226/sfondo-verticale-naturale.jpg';
@@ -32,10 +31,13 @@ export class AboutMeComponent implements OnInit {
   constructor(
     private route: Router,
     private http: HttpClient,
-    private service: PhotoService
+    private service: PhotoService,
   ) {}
   ngOnInit() {
     this.fotoprofilo$ = this.service.getBackgroundAndIcons('foto-profilo');
+    this.profiloFotografo$ = this.service.getBackgroundAndIcons(
+      'immagine-profilo-fotografo',
+    );
     this.ragazzoNerd$ =
       this.service.getBackgroundAndIcons('ragazzo_nerd_al_pc');
     this.InstagramLogo$ = this.service.getBackgroundAndIcons('instagram-logo');
@@ -44,7 +46,7 @@ export class AboutMeComponent implements OnInit {
       .getBackgroundAndIcons('sfondo-verticale-naturale')
       .subscribe((sfondo) => {
         if (sfondo) {
-          this.backgroundAboutrMe = this.getOptimizedUrl(sfondo.publicId, 3000);
+          this.backgroundAboutrMe = this.getOptimizedUrl(sfondo.publicId, 1920);
         }
       });
   }
@@ -64,9 +66,7 @@ export class AboutMeComponent implements OnInit {
   getOptimizedUrl(publicId: string, width: number): string {
     // Implementa qui la logica per costruire l'URL
     // Usando: this.cloudName, publicId, e width
-    const transformation = `w_${width},q_auto`;
+    const transformation = `w_${width},f_auto,q_auto`;
     return `https://res.cloudinary.com/${this.cloudName}/image/upload/${transformation}/${publicId}`;
   }
-
- 
 }

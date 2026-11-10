@@ -19,15 +19,16 @@ export class HeaderComponent implements OnInit {
 
   constructor(private route: Router, private service: PhotoService) {}
 
-  backGroundHeader: string = 'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/v1768658913/sfondo-di-foglie-verdi_1_umpoga.jpg'
+  backGroundHeader: string =
+  'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/w_1920,c_limit,f_auto,q_auto/v1768658913/sfondo-di-foglie-verdi_1_umpoga.jpg';
 
   ngOnInit() {
     this.logoSito$ = this.service.getBackgroundAndIcons('logo-sito');
-    this.service.getBackgroundAndIcons('background-header-top').subscribe(sfondo =>{
-      if(sfondo){
-      this.backGroundHeader = this.getOptimizedUrl(sfondo.publicId, 1920)
-      }
-    })
+    // this.service.getBackgroundAndIcons('background-header-top').subscribe(sfondo =>{
+    //   if(sfondo){
+    //   this.backGroundHeader = this.getOptimizedUrl(sfondo.publicId, 1920)
+    //   }
+    // })
   }
 
   goToHome() {
@@ -43,8 +44,6 @@ export class HeaderComponent implements OnInit {
   }
 
   getOptimizedUrl(publicId: string, width: number): string {
-    // Implementa qui la logica per costruire l'URL
-    // Usando: this.cloudName, publicId, e width
     const transformation = `w_${width},q_auto,f_auto`;
     return `https://res.cloudinary.com/${this.cloudName}/image/upload/${transformation}/${publicId}`;
   }

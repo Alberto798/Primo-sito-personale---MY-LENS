@@ -34,9 +34,6 @@ export class MainComponent implements OnInit {
 
   cloudName = 'immagini-sito-Fotografia';
 
-  backgroundForm: string =
-    'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/v1768246615/Gemini_Generated_Image_34z7ks34z7ks34z7_tvtp28.png';
-
   endPointFormspree = 'https://formspree.io/f/mvgenadk';
 
   successMessage: string = '';
@@ -45,7 +42,7 @@ export class MainComponent implements OnInit {
   constructor(
     private servicePhotos: PhotoService,
     private router: Router,
-    private Http: HttpClient
+    private Http: HttpClient,
   ) {}
 
   ngOnInit() {
@@ -53,14 +50,6 @@ export class MainComponent implements OnInit {
     this.faunaPhotos$ = this.servicePhotos.getPhotosByCategoryAndOrder('Fauna');
     this.skyPhotos$ = this.servicePhotos.getPhotosByCategoryAndOrder('Cielo');
     this.fungaPhotos$ = this.servicePhotos.getPhotosByCategoryAndOrder('Funga');
-
-    this.servicePhotos
-      .getBackgroundAndIcons('background-form')
-      .subscribe((sfondo) => {
-        if (sfondo) {
-          this.backgroundForm = this.getOptimizedUrl(sfondo.publicId, 500);
-        }
-      });
   }
 
   inHoverFlora() {
@@ -139,18 +128,19 @@ export class MainComponent implements OnInit {
       }
 
       this.Http.post(this.endPointFormspree, formData).subscribe({
-        next: (response)=> {
-          this.successMessage = 'Messaggio inviato con successo, Grazie!'
+        next: (response) => {
+          this.successMessage = 'Messaggio inviato con successo, Grazie!';
           form.resetForm();
-        }, 
-        error: (error) =>{
-          this.errorMessage = 'Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.'
-        }
-      })
-        
-  }else{
-      this.errorMessage = 'Per favore, compila tutti i campi richiesti prima di inviare il modulo.';
+        },
+        error: (error) => {
+          this.errorMessage =
+            "Si è verificato un errore durante l'invio del messaggio. Riprova più tardi.";
+        },
+      });
+    } else if (form.invalid) {
+      this.errorMessage =
+        'Per favore, compila tutti i campi richiesti prima di inviare il modulo.';
       console.log('Form non valido');
+    }
   }
-}
 }

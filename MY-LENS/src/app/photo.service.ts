@@ -28,6 +28,8 @@ export class PhotoService {
   private readonly CLOUD_NAME = 'immagini-sito-fotografia';
   private readonly BASE_URL = `https://res.cloudinary.com/${this.CLOUD_NAME}/image/upload/`;
 
+  private injector= inject(Injector);
+
   private readonly BACKGROUND_HEADER_STATIC: { [key: string]: BackgroundAndIcons } = {
     'background-header':{
       publicId: 'background-header-top', // Public ID di Cloudinary
@@ -70,7 +72,17 @@ export class PhotoService {
         width: 500, 
         height: 500,
         order: 6
-    }
+    },
+    
+      'immagine-profilo-fotografo':{
+        publicId: 'immagine-profilo-fotografo', // Public ID di Cloudinary
+        title: 'Immagine del profilo fotografia',
+        width: 500, 
+        height: 500,
+        order: 7
+
+      }
+    
   }
 
 
@@ -110,7 +122,7 @@ export class PhotoService {
   //   return collectionData(q, { idField: 'id' }) as Observable<Photo[]>;
   // }
 
-  private injector= inject(Injector)
+  
 
   getPhotosByCategoryAndOrder(categoryName: string): Observable<Photo[]> {
 

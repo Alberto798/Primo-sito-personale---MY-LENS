@@ -1,6 +1,8 @@
 <app-header></app-header>
 
 <div class="sezione-sky">
+  <h1 class="sky-titolo">Cielo</h1>
+
   @for(photo of skyPhotos$ | async ; track photo.publicId) {
   <div class="container">
     <div class="container-img">

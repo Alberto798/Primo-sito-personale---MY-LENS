@@ -1,6 +1,8 @@
 <app-header></app-header>
 
 <div class="sezione-funga">
+  <h1 class="funga-titolo">Funga</h1>
+
   @for(photo of fungaPhotos$ | async ; track photo.publicId) {
   <div class="container">
     <div class="container-img">

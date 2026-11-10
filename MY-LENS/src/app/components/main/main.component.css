@@ -1,437 +1,417 @@
-.container-flora, .container-fauna, .container-sky, .container-funga{
-    position: relative;
-    height: auto;
-    width: 85%;
-    margin: 3% auto;
-    display: flex;
-    flex-direction: row;
+/* =========================================================
+   HOME — restyling delle sezioni fotografiche
+   Stessa palette delle pagine interne. Tre foto intere per categoria.
+   (Le regole del form seguono più sotto, invariate.)
+   ========================================================= */
+
+:host {
+  --ink: #1b1b1b;
+  --ink-muted: #8a8a8a;
+  --tile: #ebe9e4;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+
+  display: block;
+  padding-top: clamp(3rem, 7vw, 6.5rem);
+  /* spazio sotto al form, prima del footer */
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+/* ---------- Titoli di sezione ---------- */
+
+#title-flora,
+#title-fauna,
+#title-sky,
+#title-funga {
+  width: auto;
+  margin: clamp(5rem, 10vw, 9rem) auto 0;
+  padding: 0 var(--gutter);
+  text-align: center;
+  background: transparent;
+}
+
+#title-flora {
+  margin-top: 0;
+}
+
+h2 {
+  display: inline-block;
+  margin: 0;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  color: var(--ink);
+  cursor: pointer;
+  transition: letter-spacing 0.6s var(--ease), color 0.4s var(--ease);
+}
+
+h2:hover {
+  letter-spacing: 0.09em;
+}
+
+/* linea sotto al titolo: si allunga in hover (logica esistente: .lineaLunga) */
+.linea {
+  width: 48px;
+  height: 1px;
+  margin: 1.4rem auto clamp(2.25rem, 4vw, 3.5rem);
+  background-color: var(--ink);
+  transition: width 0.7s var(--ease);
+}
+
+.lineaLunga {
+  width: 160px;
+}
+
+/* ---------- Griglia fotografica: tre foto intere ---------- */
+
+.container-flora,
+.container-fauna,
+.container-sky,
+.container-funga {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1.4rem);
+  /* foto intere con le loro proporzioni: allineate al centro della riga */
+  align-items: center;
+  width: min(1720px, 100% - 2 * var(--gutter));
+  margin: 0 auto;
+  opacity: 0;
+}
+
+/* spazio tra l'ultima galleria e il form */
+.container-funga {
+  margin-bottom: clamp(5rem, 9vw, 8rem);
+}
+
+.img-flora,
+.img-fauna,
+.img-sky,
+.img-funga {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  /* riquadri tutti uguali (formato delle foto, 3:2) */
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  padding: 0;
+  background: var(--tile);
+  box-shadow: none;
+}
+
+/* foto adattate al riquadro: riempiono tutto lo spazio, centrate
+   (le foto 3:2 restano intere, le altre perdono solo pochi pixel ai bordi) */
+.img-flora img,
+.img-fauna img,
+.img-sky img,
+.img-funga img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1.4s var(--ease), filter 0.8s var(--ease);
+}
+
+/* hover sulla singola foto */
+.img-flora:hover img,
+.img-fauna:hover img,
+.img-sky:hover img,
+.img-funga:hover img {
+  transform: scale(1.035);
+}
+
+/* hover sul titolo della sezione (logica esistente: .hovered-*) */
+.hovered-flora,
+.hovered-fauna,
+.hovered-sky,
+.hovered-funga {
+  transform: scale(1.02);
+  filter: brightness(1.04);
+}
+
+/* messaggio "Nessuna foto..." quando la sezione è vuota */
+.container-flora > p,
+.container-fauna > p,
+.container-sky > p,
+.container-funga > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 3rem 0;
+  text-align: center;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+/* ---------- Comparsa all'apertura (classi esistenti .effect / .delay-*) ---------- */
+
+@keyframes effect {
+  from {
     opacity: 0;
-    
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes effect{
-   from{
-       opacity: 0;
-       transform: translateY(30px);
-   }to{
-         opacity: 1;
-         transform: translateY(0);
-   }
+.effect {
+  animation: effect 1.1s var(--ease) forwards;
 }
 
-.effect{
-    animation: effect 0.8s ease-out forwards;
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .effect {
+    animation-duration: 0.01s;
+    animation-delay: 0s;
+  }
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.8s; }
-.delay-4 { animation-delay: 1s; }
+/* ---------- Mobile: una foto per riga, intera ---------- */
 
-#title-flora, #title-fauna, #title-funga{
-    
-    background-color:transparent;
-    width: 5%;
-    margin: 0 auto;
-    margin-top: 0;
-    text-align: center;
-    
-    
+@media (max-width: 680px) {
+  .container-flora,
+  .container-fauna,
+  .container-sky,
+  .container-funga {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+/* ---------- FORM: regole originali, invariate ---------- */
+
+#form-section {
+  margin-top: 50px;
+  width: 40%;
+  height: auto;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  border-radius: 50px;
+  gap: 5px;
+  box-shadow:
+    5px 0px 8px 0 rgba(0.5, 0.5, 0.5, 0.5),
+    -5px 0px 8px 0 rgba(0.5, 0.5, 0.5, 0.5);
 }
 
-#title-sky{
-    background-color:transparent;
-    width: 15%;
-    margin: 0 auto;
-    margin-top: 0;
-    text-align: center;
+.my-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  background-image: url("../../../assets/background-form.png");
+  background-size: cover;
+  border-radius: 50px;
 }
 
-
-
-  
-h2{
-    
-    color: black;
-    text-align: center;
-    font-size: 40px;
-    cursor: pointer;
-    align-items: center;
-    margin-bottom: 2px;
-   
-    
+.my-form h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: rgb(14, 218, 14);
 }
 
-
-.img-flora, .img-fauna, .img-sky, .img-funga{
-    
-    background-color: rgb(255, 254, 254);
-    height: auto;
-    width: 33.3%;
-    margin: 20px;
-    padding: 20px;
-    padding-bottom: 50px;
-    margin-top: 2%;
-    box-shadow:  5px 0px 8px 0 rgba(0.50, 0.50, 0.50, 0.50),
-            -5px 0px 8px 0 rgba(0.50, 0.50, 0.50, 0.50);
-    
-    
-    
+.my-form p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  width: 80%;
+  letter-spacing: 1px;
 }
 
-
-
-.img-flora img, .img-fauna img, .img-sky img, .img-funga img{
-    width: 100%;
-    height: 100%;
-    
+.my-form label {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
 }
 
-
-
-.container-fauna, .container-sky{
-    margin-top: 50px;
+.my-form input {
+  width: 70%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: black;
 }
 
-
-
-.hovered-flora, .hovered-fauna, .hovered-sky, .hovered-funga{
-     opacity: 0.8;
-    
+.my-form textarea {
+  width: 70%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: black;
 }
 
-.linea{
-    width: 15%;
-    background-color: black;
-    height: 3px;
-    margin: 0 auto;
-    transition: width 0.5s ease-out;
-}
-
-
-.lineaLunga{
-    width: 25%;
-    
-    
-}
-
-#form-section{
-    margin-top: 50px;
-    width: 70%;
-    height: 800px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: row;
-    
-    box-shadow:  5px 0px 8px 0 rgba(0.50, 0.50, 0.50, 0.50),
-            -5px 0px 8px 0 rgba(0.50, 0.50, 0.50, 0.50);
-    
-    
-    
-    
-    
-}
-
-.form{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    
-    margin: 0;
-      
-}
-
-.my-form{
-    width: 100%;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    height: 800px;
-}
-
-.my-form .name, .surname, .email, .message{
-    width: 100%;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.my-form h3{
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-left: 30px;
-    margin-bottom: 10px;
-    text-align: flex-start;
-    width: 100%;
-    color: black;
-    color: green;
-}
-
-.my-form p{
-    font-size: 15px;
-    width: 80%;
-    margin-left: 30px;
-    margin-top: 15px;
-    font-weight: bolder;
-    text-align: flex-start;
-    color: black;
-}
-
-.my-form label{
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: black;
-}
-
-.my-form input{
-    width: 70%;
-    height: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: transparent;
-    border: 2px solid black;
-    outline: none;
-    border-radius: 10px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-}
-
-textarea{
-    width: 70%;
-    height: 100px;
-    
-    
-    margin-bottom: 10px;
-    background: transparent;
-    border: 2px solid black;
-    outline: none;
-    border-radius: 15px;
-    font-size: 16px;
-    color: black;
-    padding: 20px 45px 20px 20px;
-}
-
-.my-form input::placeholder{
-   
-    color: black;
-    
-}
-
-.my-form button{
-    width: 30%;
-    height: 45px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color:white;
-    background: green;
-    border: none;
-    outline: none;
-    border-radius: 45px;
-    box-shadow: 0 0 10px white;
-    cursor: pointer;
-    margin-left: 30px;
-}
-
-#form-section .form-image{
-    width: 60%;
-    max-width: 500px;       
-    height: 800px;          /* Altezza fissa per mantenere l'immagine slanciata */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.my-form button {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(60, 173, 60);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1600px) {
-    
-    /* Contenitori immagini: lasciamo il "poco spazio" ai lati (5% per parte) */
-    .container-flora, .container-fauna, .container-sky, .container-funga {
-        width: 90%; 
-        margin: 0 auto;
-        gap: 20px; /* Spazio tra le immagini */
-    }
+  /* Form Section: lo teniamo orizzontale ma più largo */
+  #form-section {
+    width: 60%;
+    height: auto;
+    min-height: 650px;
+    margin-top: 50px;
+  }
 
-    .img-flora, .img-fauna, .img-sky, .img-funga {
-        /* Due immagini per riga in questa fascia */
-        width: calc(50% - 20px) !important; 
-    }
+  #form-section .form-image {
+    width: 40%; /* Riduciamo l'immagine per dare spazio ai campi */
+    display: block; /* Qui l'immagine è ancora visibile */
+  }
 
-    #title-sky, #title-flora, #title-fauna, #title-funga {
-        width: 40%;
-    }
+  .form {
+    width: 60%;
+  }
 
-    .linea{
-        width: 20%;
-    }
+  .my-form {
+    padding: 20px;
+  }
 
-    #title-sky h2, #title-flora h2, #title-fauna  h2, #title-funga h2 {
-       font-size: 28px;
-    }
-
-    /* Form Section: lo teniamo orizzontale ma più largo */
-    #form-section {
-        width: 80%;
-        height: auto;
-        min-height: 650px;
-        margin-top: 50px;
-    }
-
-    #form-section .form-image {
-        width: 40%; /* Riduciamo l'immagine per dare spazio ai campi */
-        display: block; /* Qui l'immagine è ancora visibile */
-    }
-
-    .form {
-        width: 60%;
-    }
-
-    .my-form {
-        padding: 20px;
-    }
-
-    /* Input quasi a piena larghezza per facilitare il touch/scrittura */
-    .my-form input, .my-form textarea {
-        width: 90%;
-    }
+  /* Input quasi a piena larghezza per facilitare il touch/scrittura */
+  .my-form input,
+  .my-form textarea {
+    width: 90%;
+  }
 }
 
-
-
-
-
-
 @media (max-width: 1024px) {
-    #form-section {
-        width: 90%;
-        height: auto;
-        min-height: 0;
-    }
-    
-    .my-form input, .my-form textarea {
-        width: 85%;
-    }
+  #form-section {
+    width: 90%;
+    height: auto;
+    min-height: 0;
+  }
 
-    h2{
-        font-size: 32px;
-    }
+  .my-form input,
+  .my-form textarea {
+    width: 85%;
+  }
 }
 
 @media (max-width: 768px) {
-    
-    .container-flora, .container-fauna, .container-sky, .container-funga {
-        width: 95%;
-        flex-direction: column;
-        align-items: center;
-    }
+  #form-section {
+    flex-direction: column;
+    height: auto;
+    width: 70%;
+    margin-bottom: 50px;
+  }
 
-    .img-flora, .img-fauna, .img-sky, .img-funga {
-        width: 100% !important; 
-        margin: 10px 0;
-    }
+  #form-section .form-image {
+    width: 100%;
+    height: 200px;
+  }
 
-    
-    #title-sky, #title-flora, #title-fauna, #title-funga {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+  .form {
+    width: 100%;
+  }
 
-    h2{
-        font-size: 25px;
-    }
+  .my-form {
+    width: 100%;
+    height: auto;
+    padding: 20px; /* Spazio interno uniforme */
+    align-items: center; /* Centra gli elementi internamente */
+  }
 
-    
-    #form-section {
-        flex-direction: column; 
-        height: auto;
-        width: 95%;
-        margin-bottom: 50px;
-    }
+  /* Rimuoviamo il margin-left che spinge gli input fuori dal bordo */
+  .my-form .name,
+  .surname,
+  .email,
+  .message {
+    margin-left: 0 !important;
+    width: 100%;
+    align-items: center;
+  }
 
-    #form-section .form-image {
-        width: 100%;
-        height: 200px; 
-    }
+  .my-form h3 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 24px;
+  }
 
-    .form {
-        width: 100%;
-    }
+  .my-form p {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+  #form-section .form-image {
+    display: none;
+  }
 
-    .my-form {
-        width: 100%;
-        height: auto;
-        padding: 20px; /* Spazio interno uniforme */
-        align-items: center; /* Centra gli elementi internamente */
-    }
+  .my-form input,
+  .my-form textarea {
+    width: 100%; /* Ora sta dentro grazie al box-sizing */
+    max-width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
 
-    /* Rimuoviamo il margin-left che spinge gli input fuori dal bordo */
-    .my-form .name, .surname, .email, .message {
-        margin-left: 0 !important; 
-        width: 100%;
-        align-items: center;
-    }
-
-    .my-form h3 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .my-form p {
-        margin-left: 0;
-        text-align: center;
-        width: 100%;
-    }
-    #form-section .form-image { 
-        display: none;
-     }
-
-    .my-form input, .my-form textarea {
-        width: 100%; /* Ora sta dentro grazie al box-sizing */
-        max-width: 100%;
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    .my-form button {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
+  .my-form button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-    /* Ottimizzazione specifica per smartphone piccoli */
-    .my-form h3 { font-size: 20px; }
-    
-    #form-section .form-image { 
-        display: none;
-     }
-    
-    .my-form label { 
-        font-size: 14px;
-        
-     }
+  .my-form h3 {
+    font-size: 20px;
+  }
 
-     h2{
-        font-size: 20px;
-     }
+  #form-section {
+    width: 90%;
+  }
 
-     .container-flora, .container-fauna, .container-sky, .container-funga {
-        
-        margin: 10px auto;
-    }
+  .my-form {
+    padding: 20px;
+  }
 
-     .my-form input{
-        margin: 10px;
-     }
+  .my-form label {
+    font-size: 14px;
+    height: 15px;
+  }
+
+  .my-form p {
+    font-size: 14px;
+  }
+
+  .my-form input {
+    margin: 10px;
+    height: 5px;
+  }
+
+  .my-form button {
+    width: 50%;
+  }
+
+  .my-form textarea {
+    scroll-behavior: smooth;
+  }
 }

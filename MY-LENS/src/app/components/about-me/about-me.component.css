@@ -1,17 +1,13 @@
 :host {
-
-    background-size: cover;
-    min-height: 100vh;
-    width: 100%;
-    display: block;
+  display: block;
 }
 
-:host {
-
-    background-size: cover;
-    min-height: 100vh;
-    width: 100%;
-    display: block;
+.pagina-about {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 /* header ------------------------------------------------------- */
@@ -1295,11 +1291,11 @@ h3 {
     }
 
     .container-title h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .container-links .main-links a {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin: 5px;
     }
 
@@ -1308,21 +1304,23 @@ h3 {
     .section-foto,
     .section-web {
         height: auto;
-        padding: 40px 0;
+        padding: 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        margin: 50px auto;
     }
 
     .presentation-me,
     .presentation-foto,
     .presentation-web {
-        width: 85%;
+        width: 100%;
         max-width: 500px;
         flex-direction: column;
         gap: 30px;
-        margin: 0 auto;
+        
+        
     }
 
     .presentation-foto {
@@ -1345,7 +1343,7 @@ h3 {
 
     .text {
         width: 100%;
-        margin: 0 auto;
+        
     }
 
 
@@ -1421,7 +1419,7 @@ h3 {
         font-size: 1.5rem;
     }
 
-    /* Sezioni - PERFETTAMENTE CENTRATE */
+   
     .section-me,
     .section-foto,
     .section-web {
@@ -1437,7 +1435,7 @@ h3 {
         width: 90%;
         max-width: 400px;
         padding: 20px;
-        gap: 25px;
+        gap: 10px;
         margin: 0 auto;
         box-sizing: border-box;
     }
@@ -1452,7 +1450,7 @@ h3 {
         width: 100%;
     }
 
-    /* Titoli e testi - ALLINEATI A SINISTRA CON PADDING */
+   
     h2 {
         font-size: 1.4rem;
         margin-left: 0;

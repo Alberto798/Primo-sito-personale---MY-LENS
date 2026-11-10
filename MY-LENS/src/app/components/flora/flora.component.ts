@@ -15,7 +15,8 @@ import { Photo } from '../../photo.interface';
   selector: 'app-flora',
   imports: [HeaderComponent, FooterComponent, AsyncPipe, CommonModule],
   templateUrl: './flora.component.html',
-  styleUrl: './flora.component.css'
+  styleUrl: './flora.component.css',
+  providers: [PhotoService]
 })
 export class FloraComponent implements OnInit {
 
