@@ -17,7 +17,6 @@ export class FungaComponent {
 
   constructor(private service: PhotoService) {}
 
-
   fungaPhotos$!: Observable<Photo[]>;
 
   ngOnInit() {
@@ -25,6 +24,6 @@ export class FungaComponent {
   }
 
   getOptimizedUrl(publicId: string, width: number): string {
-  return this.service.getOptimizedUrl(publicId, width);
-}
+    return this.service.getOptimizedUrl(publicId, width);
+  }
 }

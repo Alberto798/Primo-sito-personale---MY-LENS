@@ -146,20 +146,8 @@ export class PhotoService {
     return of(item);
   }
 
-  getOptimizedUrl(publicId: string, width: number = 1920): string {
-  const cloudName = 'immagini-sito-Fotografia';
-  const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload`;
-  
-  // Proviamo prima senza filigrana per essere sicuri che funzioni
-  // Nota bene: NON ci sono barre all'inizio o alla fine qui
-  const transformations = `w_${width},c_scale,f_auto,q_auto`;
-  
-  // Costruiamo l'URL finale assemblando i pezzi con le barre nel posto giusto
-  const finalUrl = `${baseUrl}/${transformations}/${publicId}`;
-  
-  return finalUrl;
+getOptimizedUrl(publicId: string, width: number = 1200): string {
+  return `${this.BASE_URL}c_limit,w_${width},f_auto,q_auto/${publicId}`;
 }
 
-
- 
 }

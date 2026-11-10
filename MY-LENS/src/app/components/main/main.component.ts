@@ -32,8 +32,6 @@ export class MainComponent implements OnInit {
   hoveredLineaSky = false;
   hoveredLineaFunga = false;
 
-  cloudName = 'immagini-sito-Fotografia';
-
   endPointFormspree = 'https://formspree.io/f/mvgenadk';
 
   successMessage: string = '';
@@ -93,10 +91,7 @@ export class MainComponent implements OnInit {
   }
 
   getOptimizedUrl(publicId: string, width: number): string {
-    // Implementa qui la logica per costruire l'URL
-    // Usando: this.cloudName, publicId, e width
-    const transformation = `w_${width},q_auto`;
-    return `https://res.cloudinary.com/${this.cloudName}/image/upload/${transformation}/${publicId}`;
+    return this.servicePhotos.getOptimizedUrl(publicId, width);
   }
 
   goToFlora() {

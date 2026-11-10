@@ -16,8 +16,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about-me.component.css',
 })
 export class AboutMeComponent implements OnInit {
-  cloudName = 'immagini-sito-Fotografia';
-
   carattereGrande = '';
 
   fotoprofilo$!: Observable<BackgroundAndIcons | undefined>;
@@ -64,9 +62,6 @@ export class AboutMeComponent implements OnInit {
   }
 
   getOptimizedUrl(publicId: string, width: number): string {
-    // Implementa qui la logica per costruire l'URL
-    // Usando: this.cloudName, publicId, e width
-    const transformation = `w_${width},f_auto,q_auto`;
-    return `https://res.cloudinary.com/${this.cloudName}/image/upload/${transformation}/${publicId}`;
+    return this.service.getOptimizedUrl(publicId, width);
   }
 }

@@ -13,14 +13,15 @@ import { BackgroundAndIcons } from '../../background.icons.interface';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  cloudName = 'immagini-sito-Fotografia';
-
   logoSito$!: Observable<BackgroundAndIcons | undefined>;
 
-  constructor(private route: Router, private service: PhotoService) {}
+  constructor(
+    private route: Router,
+    private service: PhotoService,
+  ) {}
 
   backGroundHeader: string =
-  'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/w_1920,c_limit,f_auto,q_auto/v1768658913/sfondo-di-foglie-verdi_1_umpoga.jpg';
+    'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/w_1920,c_limit,f_auto,q_auto/v1768658913/sfondo-di-foglie-verdi_1_umpoga.jpg';
 
   ngOnInit() {
     this.logoSito$ = this.service.getBackgroundAndIcons('logo-sito');
@@ -44,7 +45,6 @@ export class HeaderComponent implements OnInit {
   }
 
   getOptimizedUrl(publicId: string, width: number): string {
-    const transformation = `w_${width},q_auto,f_auto`;
-    return `https://res.cloudinary.com/${this.cloudName}/image/upload/${transformation}/${publicId}`;
+    return this.service.getOptimizedUrl(publicId, width);
   }
 }
