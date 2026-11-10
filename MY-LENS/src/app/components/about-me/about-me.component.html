@@ -1,7 +1,7 @@
-
-
-
-<section class="pagina-about" [style.background-image]="'url(' + backgroundAboutrMe + ')'">
+<section
+  class="pagina-about"
+  [style.background-image]="'url(' + backgroundAboutrMe + ')'"
+>
   <header>
     <section class="Navbar">
       <div class="container-title">
@@ -9,11 +9,26 @@
       </div>
 
       <div class="container-links">
-        <div class="main-links">
-          <a (click)="goToHome()">Home</a>
-          <a (click)="goToGallery()">Gallery</a>
-          <a (click)="goToAboutMe()">About Me</a>
-        </div>
+        <nav class="main-links" aria-label="Navigazione principale">
+        <a
+          routerLink="/home"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >Home</a
+        >
+        <a
+          routerLink="/gallery"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >Gallery</a
+        >
+        <a
+          routerLink="/about-me"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >About Me</a
+        >
+      </nav>
       </div>
     </section>
   </header>
@@ -22,13 +37,13 @@
     <section class="section-me animation delay-1">
       <div class="presentation-me">
         <div class="title-img">
-          @if(fotoprofilo$ | async; as logo){
-          <img
-            [src]="getOptimizedUrl(logo.publicId, 1000)"
-            [alt]="logo.title"
-            [width]="logo.width"
-            [height]="logo.height"
-          />
+          @if (fotoprofilo$ | async; as logo) {
+            <img
+              [src]="getOptimizedUrl(logo.publicId, 1000)"
+              [alt]="logo.title"
+              [width]="logo.width"
+              [height]="logo.height"
+            />
           }
         </div>
 
@@ -67,14 +82,14 @@
 
     <section class="section-foto animation delay-2">
       <div class="presentation-foto">
-         <div class="title-img">
-          @if(profiloFotografo$ | async; as logo){
-          <img
-            [src]="getOptimizedUrl(logo.publicId, 800)"
-            [alt]="logo.title"
-            [width]="logo.width"
-            [height]="logo.height"
-          />
+        <div class="title-img">
+          @if (profiloFotografo$ | async; as logo) {
+            <img
+              [src]="getOptimizedUrl(logo.publicId, 800)"
+              [alt]="logo.title"
+              [width]="logo.width"
+              [height]="logo.height"
+            />
           }
         </div>
         <div class="text">
@@ -107,13 +122,13 @@
     <section class="section-web animation delay-3">
       <div class="presentation-web">
         <div class="img-web">
-          @if(ragazzoNerd$ | async; as logo){
-          <img
-            [src]="getOptimizedUrl(logo.publicId, 500)"
-            [alt]="logo.title"
-            [width]="logo.width"
-            [height]="logo.height"
-          />
+          @if (ragazzoNerd$ | async; as logo) {
+            <img
+              [src]="getOptimizedUrl(logo.publicId, 500)"
+              [alt]="logo.title"
+              [width]="logo.width"
+              [height]="logo.height"
+            />
           }
         </div>
         <div class="text">
@@ -144,13 +159,13 @@
 
   <footer>
     <div class="footer">
-      @if(InstagramLogo$ | async; as logo){
-      <img
-        [src]="getOptimizedUrl(logo.publicId, 100)"
-        [alt]="logo.title"
-        [width]="logo.width"
-        [height]="logo.height"
-      />
+      @if (InstagramLogo$ | async; as logo) {
+        <img
+          [src]="getOptimizedUrl(logo.publicId, 100)"
+          [alt]="logo.title"
+          [width]="logo.width"
+          [height]="logo.height"
+        />
       }
     </div>
   </footer>

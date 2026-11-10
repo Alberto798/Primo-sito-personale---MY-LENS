@@ -1,5 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, Injector, runInInjectionContext } from '@angular/core';
+import {
+  inject,
+  Injectable,
+  Injector,
+  runInInjectionContext,
+} from '@angular/core';
 import { map, Observable, of, Subscriber } from 'rxjs';
 
 import {
@@ -20,77 +25,74 @@ import { BackgroundAndIcons } from './background.icons.interface';
   providedIn: 'root',
 })
 export class PhotoService {
-
   private firestore: Firestore = inject(Firestore);
-  
 
   private readonly COLLECTION_NAME = 'Gallery';
   private readonly CLOUD_NAME = 'immagini-sito-fotografia';
   private readonly BASE_URL = `https://res.cloudinary.com/${this.CLOUD_NAME}/image/upload/`;
 
-  private injector= inject(Injector);
+  private injector = inject(Injector);
 
-  private readonly BACKGROUND_HEADER_STATIC: { [key: string]: BackgroundAndIcons } = {
-    'background-header':{
+  private readonly BACKGROUND_HEADER_STATIC: {
+    [key: string]: BackgroundAndIcons;
+  } = {
+    'background-header': {
       publicId: 'background-header-top', // Public ID di Cloudinary
       title: 'background-header',
-      width: 5472 ,
+      width: 5472,
       height: 3648,
       order: 1,
     },
-    'instagram-logo':{
+    'instagram-logo': {
       publicId: 'instagram-logo', // Public ID di Cloudinary
       title: 'instagram-logo',
       width: 64,
       height: 64,
       order: 2,
     },
-    'foto-profilo':{
+    'foto-profilo': {
       publicId: 'foto-profilo', // Public ID di Cloudinary
       title: 'foto-profilo',
       width: 3600,
       height: 3239,
       order: 3,
     },
-    'ragazzo_nerd_al_pc':{
+    ragazzo_nerd_al_pc: {
       publicId: 'ragazzo_nerd_al_pc', // Public ID di Cloudinary
       title: 'ragazzo nerd al pc',
       width: 1024,
       height: 1024,
       order: 4,
     },
-    'sfondo-verticale-naturale':{
+    'sfondo-verticale-naturale': {
       publicId: 'sfondo-verticale-naturale', // Public ID di Cloudinary
-        title: 'sfondo verticale naturale',
-        width: 4024, 
-        height: 6036,
-        order: 5
+      title: 'sfondo verticale naturale',
+      width: 4024,
+      height: 6036,
+      order: 5,
     },
-    'logo-sito':{
+    'logo-sito': {
       publicId: 'logo-sito', // Public ID di Cloudinary
-        title: 'logo-sito-personale',
-        width: 500, 
-        height: 500,
-        order: 6
+      title: 'logo-sito-personale',
+      width: 500,
+      height: 500,
+      order: 6,
     },
-    
-      'immagine-profilo-fotografo':{
-        publicId: 'immagine-profilo-fotografo', // Public ID di Cloudinary
-        title: 'Immagine del profilo fotografia',
-        width: 500, 
-        height: 500,
-        order: 7
 
-      }
-    
-  }
-
+    'immagine-profilo-fotografo': {
+      publicId: 'immagine-profilo-fotografo', // Public ID di Cloudinary
+      title: 'Immagine del profilo fotografia',
+      width: 500,
+      height: 500,
+      order: 7,
+    },
+  };
 
   private photosCollection = collection(this.firestore, this.COLLECTION_NAME);
-  private photosQuery = query(this.photosCollection, orderBy("order", "asc"));
-  readonly photos$ = collectionData(this.photosQuery, { idField: 'id' }) as Observable<Photo[]>;
-
-  
+  private photosQuery = query(this.photosCollection, orderBy('order', 'asc'));
+  readonly photos$ = collectionData(this.photosQuery, {
+    idField: 'id',
+  }) as Observable<Photo[]>;
 
   getPhotosByCategory(categoryName: string): Observable<Photo[]> {
     const photoRef = collection(this.firestore, this.COLLECTION_NAME);
@@ -122,32 +124,37 @@ export class PhotoService {
   //   return collectionData(q, { idField: 'id' }) as Observable<Photo[]>;
   // }
 
-  
-
   getPhotosByCategoryAndOrder(categoryName: string): Observable<Photo[]> {
-
     return runInInjectionContext(this.injector, () => {
       const q = query(
         this.photosCollection,
         where('category', '==', categoryName),
         orderBy('order', 'asc'),
-        limit(3)
+        limit(3),
       );
 
       return collectionData(q, { idField: 'id' }) as Observable<Photo[]>;
     });
   }
 
-
-  getBackgroundAndIcons(key:string): Observable<BackgroundAndIcons | undefined> {
-
+  getBackgroundAndIcons(
+    key: string,
+  ): Observable<BackgroundAndIcons | undefined> {
     const item = this.BACKGROUND_HEADER_STATIC[key];
 
     return of(item);
   }
 
-getOptimizedUrl(publicId: string, width: number = 1200): string {
-  return `${this.BASE_URL}c_limit,w_${width},f_auto,q_auto/${publicId}`;
-}
+  getOptimizedUrl(publicId: string, width: number = 1200): string {
+    return `${this.BASE_URL}c_limit,w_${width},f_auto,q_auto/${publicId}`;
+  }
 
+  getImgSet(
+    publicId: string,
+    widths: number[] = [400, 600, 800, 1200, 1600],
+  ): string {
+    return widths
+      .map((w) => `${this.getOptimizedUrl(publicId, w)} ${w}w`)
+      .join(', ');
+  }
 }

@@ -80,6 +80,19 @@ header {
 
 }
 
+.container-links .main-links a.attivo {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+/* contorno visibile quando si naviga con la tastiera */
+.container-links .main-links a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 
 
 /* main -------------------------------------------------------- */

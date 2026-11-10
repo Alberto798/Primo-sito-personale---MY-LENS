@@ -4,23 +4,21 @@
 <h2>MY GALLERY</h2>
 
 <div id="container-gallery">
-
   <div class="gallery">
-  
-    @for(photo of AllPhotos$ | async; track photo.publicId) {
-    <img
-      [src]="getOptimizedUrl(photo.publicId, 700)"
-      [alt]="photo.title"
-      [width]="photo.width"
-      [height]="photo.height"
-      loading="lazy"
-      
-    />
-
+    @for (photo of AllPhotos$ | async; track photo.publicId) {
+      <img
+        [src]="getOptimizedUrl(photo.publicId, 700)"
+        [srcset]="getSrcSet(photo.publicId)"
+        sizes="(max-width: 480px) 95vw, (max-width: 768px) 45vw, 33vw"
+        [alt]="photo.title"
+        [width]="photo.width"
+        [height]="photo.height"
+        loading="lazy"
+        decoding="async"
+      />
     }
   </div>
 </div>
-  <section class="footer">
-    <app-footer></app-footer>
-  </section>
-
+<section class="footer">
+  <app-footer></app-footer>
+</section>

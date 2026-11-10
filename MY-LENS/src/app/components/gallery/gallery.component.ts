@@ -27,4 +27,8 @@ export class GalleryComponent implements OnInit {
   getOptimizedUrl(publicId: string, width: number): string {
     return this.servicePhotos.getOptimizedUrl(publicId, width);
   }
+
+  getSrcSet(publicId: string): string {
+  return this.servicePhotos.getImgSet(publicId);
+}
 }

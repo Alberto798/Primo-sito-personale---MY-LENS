@@ -1,10 +1,8 @@
 <div id="title-flora">
-  <h2
-    (mouseenter)="inHoverFlora()"
-    (mouseleave)="outHoverFlora()"
-    (click)="goToFlora()"
-  >
-    Flora
+  <h2 (mouseenter)="inHoverFlora()" (mouseleave)="outHoverFlora()">
+    <a routerLink="/flora" (focus)="inHoverFlora()" (blur)="outHoverFlora()"
+      >Flora</a
+    >
   </h2>
 </div>
 
@@ -15,11 +13,14 @@
     <div class="img-flora">
       <img
         [src]="getOptimizedUrl(photo.publicId, 700)"
+        [srcset]="getSrcSet(photo.publicId)"
+        sizes="(max-width: 680px) 100vw, 33vw"
         [alt]="photo.title"
         [width]="photo.width"
         [height]="photo.height"
         [ngClass]="{ 'hovered-flora': hoverFlora }"
         loading="lazy"
+        decoding="async"
       />
     </div>
   } @empty {
@@ -29,12 +30,10 @@
 
 <!-- Sezione Fauna -->
 <div id="title-fauna">
-  <h2
-    (mouseenter)="inHoverFauna()"
-    (mouseleave)="outHoverFauna()"
-    (click)="goToFauna()"
-  >
-    Fauna
+  <h2 (mouseenter)="inHoverFauna()" (mouseleave)="outHoverFauna()">
+    <a routerLink="/fauna" (focus)="inHoverFauna()" (blur)="outHoverFauna()"
+      >Flora</a
+    >
   </h2>
 </div>
 <div class="linea" [ngClass]="{ lineaLunga: hoveredLineaFauna }"></div>
@@ -44,11 +43,14 @@
     <div class="img-fauna">
       <img
         [src]="getOptimizedUrl(photo.publicId, 700)"
+        sizes="(max-width: 680px) 100vw, 33vw"
+        [srcset]="getSrcSet(photo.publicId)"
         [alt]="photo.title"
         [width]="photo.width"
         [height]="photo.height"
         [ngClass]="{ 'hovered-fauna': hoverFauna }"
         loading="lazy"
+        decoding="async"
       />
     </div>
   } @empty {
@@ -59,12 +61,10 @@
 <!-- Sezione Sky (Cielo) -->
 
 <div id="title-sky">
-  <h2
-    (mouseenter)="inHoverSky()"
-    (mouseleave)="outHoverSky()"
-    (click)="goToSky()"
-  >
-    Ciò che offre il cielo
+  <h2 (mouseenter)="inHoverSky()" (mouseleave)="outHoverSky()">
+    <a routerLink="/sky" (focus)="inHoverSky()" (blur)="outHoverSky()"
+      >Ciò che offre il cielo</a
+    >
   </h2>
 </div>
 <div class="linea" [ngClass]="{ lineaLunga: hoveredLineaSky }"></div>
@@ -75,11 +75,14 @@
     <div class="img-sky">
       <img
         [src]="getOptimizedUrl(photo.publicId, 700)"
+        sizes="(max-width: 680px) 100vw, 33vw"
+        [srcset]="getSrcSet(photo.publicId)"
         [alt]="photo.title"
         [width]="photo.width"
         [height]="photo.height"
         [ngClass]="{ 'hovered-sky': hoverSky }"
         loading="lazy"
+        decoding="async"
       />
     </div>
   } @empty {
@@ -88,12 +91,10 @@
 </div>
 
 <div id="title-funga">
-  <h2
-    (mouseenter)="inHoverFunga()"
-    (mouseleave)="outHoverFunga()"
-    (click)="goToFunga()"
-  >
-    Funga
+  <h2 (mouseenter)="inHoverFunga()" (mouseleave)="outHoverFunga()">
+    <a routerLink="/funga" (focus)="inHoverFunga()" (blur)="outHoverFunga()"
+      >Funga</a
+    >
   </h2>
 </div>
 <div class="linea" [ngClass]="{ lineaLunga: hoveredLineaFunga }"></div>
@@ -103,11 +104,14 @@
     <div class="img-funga">
       <img
         [src]="getOptimizedUrl(photo.publicId, 700)"
+        sizes="(max-width: 680px) 100vw, 33vw"
+        [srcset]="getSrcSet(photo.publicId)"
         [alt]="photo.title"
         [width]="photo.width"
         [height]="photo.height"
         [ngClass]="{ 'hovered-funga': hoverFunga }"
         loading="lazy"
+        decoding="async"
       />
     </div>
   } @empty {
@@ -143,7 +147,6 @@
       required
     />
 
-
     <label for="email">Email</label>
     <input
       type="email"
@@ -162,7 +165,11 @@
     ></textarea>
 
     <button type="submit">Invia</button>
-    <p class="error-message" style="text-align: center;" *ngIf="errorMessage">{{ errorMessage }}</p>
-    <p class="forma-valido" style="text-align: center" *ngIf="successMessage">{{successMessage}}</p>
+    <p class="error-message" style="text-align: center" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </p>
+    <p class="forma-valido" style="text-align: center" *ngIf="successMessage">
+      {{ successMessage }}
+    </p>
   </form>
 </div>

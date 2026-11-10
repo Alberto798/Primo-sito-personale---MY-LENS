@@ -1,14 +1,14 @@
-<header [style.background-image]="'url('+ backGroundHeader +')'">
-  <section class="Navbar" >
+<header [style.background-image]="'url(' + backGroundHeader + ')'">
+  <section class="Navbar">
     <div id="logo-container">
-      @if(logoSito$ | async; as logo){
-      <img
-        id="logo"
-        [src]="getOptimizedUrl(logo.publicId, 200)"
-        [alt]="logo.title"
-        [width]="logo.width"
-        [height]="logo.height"
-      />
+      @if (logoSito$ | async; as logo) {
+        <img
+          id="logo"
+          [src]="getOptimizedUrl(logo.publicId, 200)"
+          [alt]="logo.title"
+          [width]="logo.width"
+          [height]="logo.height"
+        />
       }
     </div>
 
@@ -17,11 +17,26 @@
     </div>
 
     <div class="container-links">
-      <div class="main-links">
-        <a (click)="goToHome()">Home</a>
-        <a (click)="goToGallery()">Gallery</a>
-        <a (click)="goToAboutMe()">About Me</a>
-      </div>
+      <nav class="main-links" aria-label="Navigazione principale">
+        <a
+          routerLink="/home"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >Home</a
+        >
+        <a
+          routerLink="/gallery"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >Gallery</a
+        >
+        <a
+          routerLink="/about-me"
+          routerLinkActive="attivo"
+          ariaCurrentWhenActive="page"
+          >About Me</a
+        >
+      </nav>
     </div>
   </section>
   <p>

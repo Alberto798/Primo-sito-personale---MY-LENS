@@ -28,4 +28,8 @@ export class SkyComponent implements OnInit {
   getOptimizedUrl(publicId: string, width: number): string {
     return this.service.getOptimizedUrl(publicId, width);
   }
+
+  getSrcSet(publicId: string): string {
+  return this.service.getImgSet(publicId);
+}
 }

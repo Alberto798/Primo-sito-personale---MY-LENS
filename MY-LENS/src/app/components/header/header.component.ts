@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { async, Observable } from 'rxjs';
 import { PhotoService } from '../../photo.service';
@@ -8,7 +8,7 @@ import { BackgroundAndIcons } from '../../background.icons.interface';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -30,18 +30,6 @@ export class HeaderComponent implements OnInit {
     //   this.backGroundHeader = this.getOptimizedUrl(sfondo.publicId, 1920)
     //   }
     // })
-  }
-
-  goToHome() {
-    this.route.navigate(['home']);
-  }
-
-  goToGallery() {
-    this.route.navigate(['gallery']);
-  }
-
-  goToAboutMe() {
-    this.route.navigate(['about-me']);
   }
 
   getOptimizedUrl(publicId: string, width: number): string {

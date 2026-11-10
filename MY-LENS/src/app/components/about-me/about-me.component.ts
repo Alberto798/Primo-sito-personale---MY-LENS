@@ -1,7 +1,7 @@
 import { Component, computed, effect, OnInit, signal } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 import { BackgroundAndIcons } from '../../background.icons.interface';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-me',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css',
 })
@@ -27,8 +27,6 @@ export class AboutMeComponent implements OnInit {
     'https://res.cloudinary.com/immagini-sito-fotografia/image/upload/v1763063226/sfondo-verticale-naturale.jpg';
 
   constructor(
-    private route: Router,
-    private http: HttpClient,
     private service: PhotoService,
   ) {}
   ngOnInit() {
@@ -49,17 +47,7 @@ export class AboutMeComponent implements OnInit {
       });
   }
 
-  goToHome() {
-    this.route.navigate(['home']);
-  }
-
-  goToGallery() {
-    this.route.navigate(['gallery']);
-  }
-
-  goToAboutMe() {
-    this.route.navigate(['about-me']);
-  }
+ 
 
   getOptimizedUrl(publicId: string, width: number): string {
     return this.service.getOptimizedUrl(publicId, width);

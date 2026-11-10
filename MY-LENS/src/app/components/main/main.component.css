@@ -1,8 +1,4 @@
-/* =========================================================
-   HOME — restyling delle sezioni fotografiche
-   Stessa palette delle pagine interne. Tre foto intere per categoria.
-   (Le regole del form seguono più sotto, invariate.)
-   ========================================================= */
+
 
 :host {
   --ink: #1b1b1b;
@@ -146,6 +142,20 @@ h2:hover {
   color: var(--ink-muted);
 }
 
+
+
+h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+
+
 /* ---------- Comparsa all'apertura (classi esistenti .effect / .delay-*) ---------- */
 
 @keyframes effect {
@@ -175,7 +185,7 @@ h2:hover {
   }
 }
 
-/* ---------- Mobile: una foto per riga, intera ---------- */
+/*  Mobile: una foto per riga, intera  */
 
 @media (max-width: 680px) {
   .container-flora,
@@ -186,7 +196,7 @@ h2:hover {
     gap: 1rem;
   }
 }
-/* ---------- FORM: regole originali, invariate ---------- */
+/* FORM: regole originali, invariate */
 
 #form-section {
   margin-top: 50px;

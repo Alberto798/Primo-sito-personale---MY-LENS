@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { map, Observable } from 'rxjs';
 
-import { Route, Router } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 import { Photo } from '../../photo.interface';
 import { PhotoService } from '../../photo.service';
 import { orderBy } from 'firebase/firestore';
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
   standalone: true,
@@ -39,7 +39,6 @@ export class MainComponent implements OnInit {
 
   constructor(
     private servicePhotos: PhotoService,
-    private router: Router,
     private Http: HttpClient,
   ) {}
 
@@ -94,21 +93,9 @@ export class MainComponent implements OnInit {
     return this.servicePhotos.getOptimizedUrl(publicId, width);
   }
 
-  goToFlora() {
-    this.router.navigate(['/flora']);
-  }
-
-  goToFauna() {
-    this.router.navigate(['/fauna']);
-  }
-
-  goToSky() {
-    this.router.navigate(['/sky']);
-  }
-
-  goToFunga() {
-    this.router.navigate(['/funga']);
-  }
+  getSrcSet(publicId: string): string {
+  return this.servicePhotos.getImgSet(publicId);
+}
 
   onSubmit(form: NgForm) {
     this.successMessage = '';
